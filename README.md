@@ -1,2 +1,2 @@
-# BlockShop-
+# BlockShop
 Block Shop - Loja de Tecnologia.
