@@ -1215,10 +1215,10 @@ html{scroll-padding-top:var(--top-total)}
   <!-- Promo Banners -->
   <div class="promo-grid">
     <div class="promo-card pc1" onclick="openProductModal(1)">
-      <div class="promo-emoji">📱</div>
-      <div class="promo-tag">Lançamento exclusivo</div>
-      <h3>iPhone 16<br>Series</h3>
-      <p>Chip A18 Pro. Câmera revolucionária.</p>
+      <div class="promo-emoji">💍</div>
+      <div class="promo-tag">Mais Vendido</div>
+      <h3>Anel Smart<br>DAIPAN</h3>
+      <p>Monitor de temperatura. Aço inoxidável premium.</p>
       <button class="promo-btn">Comprar Agora →</button>
     </div>
     <div class="promo-card pc2" onclick="filterAndScroll('games')">
@@ -1506,8 +1506,8 @@ html{scroll-padding-top:var(--top-total)}
           </div>
         </div>
         <div class="m-actions">
-          <button class="btn-add-m" onclick="addFromModal()">🛒 Adicionar ao Carrinho</button>
-          <button class="btn-buy-m" onclick="buyNow()">⚡ Comprar Agora</button>
+          <button class="btn-add-m" onclick="addFromModal()" id="modalAddBtn">🛒 Adicionar ao Carrinho</button>
+          <button class="btn-buy-m" onclick="buyNow()" id="modalBuyBtn">⚡ Comprar no Wix →</button>
         </div>
         <div class="m-meta">
           <div class="m-meta-row"><span class="mi">🚚</span>Frete grátis para todo Brasil</div>
@@ -1547,7 +1547,7 @@ html{scroll-padding-top:var(--top-total)}
 const PRODUCTS = [
 
   // ── PRODUTO 1 — Anel Smart DAIPAN (foto própria no GitHub) ──
-  {id:1,brand:'DAIPAN',name:'Anel Smart Inteligente DAIPAN',
+  {id:1,wixUrl:'https://www.blockshoponline.com/product-page/titanium-steel-temperature-couple-ring-mood-emotion-feeling-intelligent',brand:'DAIPAN',name:'Anel Smart Inteligente DAIPAN',
    img:'images/products/anel-smart-daipan.jpg',
    emoji:'💍',price:49.98,oldPrice:64.00,discount:22,rating:4.8,reviews:312,stock:40,badge:'hot',
    installments:'3x R$ 16,66 sem juros',cat:'wearable',
@@ -1557,7 +1557,7 @@ const PRODUCTS = [
    specs:[['Marca','DAIPAN'],['Modelo','R007'],['Material','Aço inoxidável premium'],['Largura','8 mm'],['Funções','Temperatura, fitness, notificações'],['Display','Digital com leitura de temperatura'],['Gênero','Unissex'],['Compatível','Universal']]},
 
   // ── PRODUTO 2 — Fone Bluetooth LED ──
-  {id:2,brand:'CHUBA',name:'Fone Bluetooth LED Display TWS + Case',
+  {id:2,wixUrl:'https://www.blockshoponline.com/product-page/new-bluetooth-earphones-handfree-led-dispay-headphones-bluetooth-music-wireless',brand:'CHUBA',name:'Fone Bluetooth LED Display TWS + Case',
    img:'https://static.wixstatic.com/media/cc7a6c_a2c5680f0f7c49078e13d2d779c84be2~mv2.jpg',
    emoji:'🎧',price:44.75,oldPrice:60.41,discount:26,rating:4.7,reviews:0,stock:3,badge:'ltd',
    installments:'3x R$ 14,92 sem juros',cat:'audio',
@@ -1567,7 +1567,7 @@ const PRODUCTS = [
    specs:[['Bluetooth','5.3'],['Bateria','600 mAh'],['Driver','8mm dinâmico'],['ANC','Sim'],['Impermeável','Sim'],['Carga','Case USB-C'],['Peso','60g']]},
 
   // ── PRODUTO 3 — Mini Caixinha Bluetooth ──
-  {id:3,brand:'XIKCUP',name:'Mini Caixinha Bluetooth 5.0 Portátil Fabric',
+  {id:3,wixUrl:'https://www.blockshoponline.com/product-page/mini-fabric-speaker-portable-wireless-soundbar-bluetooth-50-outdoor-indoor',brand:'XIKCUP',name:'Mini Caixinha Bluetooth 5.0 Portátil Fabric',
    img:'https://static.wixstatic.com/media/88f6a2_4e2197062b464a25a4b9404edd4a78fa~mv2.jpg',
    emoji:'🔊',price:40.50,oldPrice:54.68,discount:26,rating:4.7,reviews:0,stock:25,badge:'hot',
    installments:'3x R$ 13,50 sem juros',cat:'audio',
@@ -1577,7 +1577,7 @@ const PRODUCTS = [
    specs:[['Bluetooth','5.0'],['Bateria','500 mAh'],['Canais','2.0 Full-Range'],['Potência','< 25W'],['Impermeável','Sim'],['Material','Plástico + Tecido']]},
 
   // ── PRODUTO 4 — Selfie Stick Subaquático ──
-  {id:4,brand:'FANGTUOSI',name:'Selfie Stick Subaquático Extensível GoPro DJI Insta360',
+  {id:4,wixUrl:'https://www.blockshoponline.com/product-page/fangtuosi-underwater-buoyancy-bar-diving-extendable-selfie-stick-tripod-for',brand:'FANGTUOSI',name:'Selfie Stick Subaquático Extensível GoPro DJI Insta360',
    img:'https://static.wixstatic.com/media/6173da_ee885cece9b14aae8800351acd196232~mv2.png',
    emoji:'📷',price:95.00,oldPrice:128.25,discount:26,rating:4.7,reviews:0,stock:14,badge:'sale',
    installments:'3x R$ 31,67 sem juros',cat:'acessorios',
@@ -1587,7 +1587,7 @@ const PRODUCTS = [
    specs:[['Marca','FANGTUOSI'],['Material','Alumínio'],['Compatível','DJI, Insta360, GoPro'],['Tipo','Extensível + Tripé'],['Uso','Subaquático e Outdoor']]},
 
   // ── PRODUTO 5 — Tripé com Shutter Bluetooth ──
-  {id:5,brand:'FGCLSY',name:'Tripé Extensível Smartphone + Bluetooth Shutter',
+  {id:5,wixUrl:'https://www.blockshoponline.com/product-page/fgclsy-new-tripod-for-smartphone-camerastand-with-bluetooth-shutter-and',brand:'FGCLSY',name:'Tripé Extensível Smartphone + Bluetooth Shutter',
    img:'https://static.wixstatic.com/media/2e01b6_58d63b9842f442d48eb403edca036b97~mv2.jpg',
    emoji:'📷',price:60.00,oldPrice:81.00,discount:26,rating:4.7,reviews:0,stock:99836,badge:'sale',
    installments:'3x R$ 20,00 sem juros',cat:'acessorios',
@@ -1597,7 +1597,7 @@ const PRODUCTS = [
    specs:[['Marca','FGCLSY'],['Shutter','Bluetooth incluso'],['Compatível','Universal smartphones'],['Ajuste','Altura extensível'],['Uso','Selfie, Vlog, Live']]},
 
   // ── PRODUTO 6 — Headphone Over-Ear HiFi ──
-  {id:6,brand:'BT',name:'Headphone Over-Ear Bluetooth HiFi Stereo',
+  {id:6,wixUrl:'https://www.blockshoponline.com/product-page/bt-mobile-head-phones-over-ear-phone-stereo-music-headset-over-ear-headphones',brand:'BT',name:'Headphone Over-Ear Bluetooth HiFi Stereo',
    img:'https://static.wixstatic.com/media/2e01b6_e8f1234567890abcdef1234567890abc~mv2.jpg',
    emoji:'🎧',price:649.50,oldPrice:876.83,discount:26,rating:4.7,reviews:0,stock:59994,badge:'sale',
    installments:'6x R$ 108,25',cat:'audio',
@@ -1608,7 +1608,7 @@ const PRODUCTS = [
    specs:[['Tipo','Over-Ear dobrável'],['Conexão','Bluetooth + P2'],['Som','HiFi Estéreo'],['Microfone','Integrado'],['Isolamento','Acústico passivo']]},
 
   // ── PRODUTO 7 — KZ EDX PRO X (imagem oficial KZ Audio) ──
-  {id:7,brand:'KZ',name:'KZ EDX PRO X IEM Earphones HiFi Deep Bass',
+  {id:7,wixUrl:'https://www.blockshoponline.com/product-page/kz-edx-pro-x-iem-earphones-dynamic-drive-hifi-deep-bass-sound-earbud-sport-music',brand:'KZ',name:'KZ EDX PRO X IEM Earphones HiFi Deep Bass',
    img:'https://kz-audio.com/image/cache/catalog/KZ/EDX-PRO-X/KZ-EDX-PRO-X-01-1000x1000.jpg',
    emoji:'🎧',price:70.75,oldPrice:95.51,discount:26,rating:4.7,reviews:0,stock:7,badge:'ltd',
    installments:'3x R$ 23,58 sem juros',cat:'audio',
@@ -1618,7 +1618,7 @@ const PRODUCTS = [
    specs:[['Driver','10mm Super-Linear Dynamic'],['Cabo','0.75mm 2-Pin destacável'],['Impedância','< 32Ω'],['Frequência','20-20.000 Hz'],['Design','Resina transparente'],['Microfone','Opcional']]},
 
   // ── PRODUTO 8 — Trimui Smart Pro (imagem oficial Trimui) ──
-  {id:8,brand:'TRIMUI',name:'Trimui Smart Pro Console Portátil Retro 4.96" IPS',
+  {id:8,wixUrl:'https://www.blockshoponline.com/product-page/trimui-smart-pro-handheld-game-console-496ips-screen-linux-system-joystick',brand:'TRIMUI',name:'Trimui Smart Pro Console Portátil Retro 4.96" IPS',
    img:'https://trimui.net/cdn/shop/files/Trimui_Smart_Pro_01.jpg?v=1704855945&width=800',
    emoji:'🎮',price:952.00,oldPrice:1285.20,discount:26,rating:4.8,reviews:0,stock:8,badge:'ltd',
    installments:'6x R$ 158,67',cat:'games',
@@ -1628,7 +1628,7 @@ const PRODUCTS = [
    specs:[['Tela','4.96" IPS 720x1280'],['Processador','Allwinner A133P 1.8GHz'],['RAM','1GB LPDDR4x'],['Bateria','5000 mAh (5h)'],['WiFi','802.11 b/g/n'],['Emuladores','+20 formatos'],['Sistema','Linux Open Source']]},
 
   // ── PRODUTO 9 — Smart Watch 2026 ──
-  {id:9,brand:'2026',name:'Smart Watch Android 1.44" Bluetooth Call Monitor',
+  {id:9,wixUrl:'https://www.blockshoponline.com/product-page/2026-new-smart-watch-android-phone-144inch-color-screen-bluetooth-call-blood',brand:'2026',name:'Smart Watch Android 1.44" Bluetooth Call Monitor',
    img:'https://static.wixstatic.com/media/cc7a6c_d729f11df0014f47aa2fae316c55a427~mv2.jpg',
    emoji:'⌚',price:83.25,oldPrice:112.39,discount:26,rating:4.7,reviews:0,stock:6989,badge:'sale',
    installments:'3x R$ 27,75 sem juros',cat:'wearable',
@@ -1638,7 +1638,7 @@ const PRODUCTS = [
    specs:[['Tela','1.44" Color Screen'],['Chamadas','Bluetooth integrado'],['Saúde','Freq. cardíaca, SpO2, Pressão'],['Atividades','Pedômetro, calorias, sono'],['Compatível','Android e iOS']]},
 
   // ── PRODUTO 10 — AYN THOR Handheld ──
-  {id:10,brand:'AYN',name:'AYN THOR Dual Screen Flip Handheld + Case Bag',
+  {id:10,wixUrl:'https://www.blockshoponline.com/product-page/ayn-thor-dual-screen-flip-up-handheld-device-protective-case-storage-bag-lanyard',brand:'AYN',name:'AYN THOR Dual Screen Flip Handheld + Case Bag',
    img:'https://static.wixstatic.com/media/778ac2_d2efe0e1f65e45d8bc5293d3c1ecfd8b~mv2.jpg',
    emoji:'🎮',price:178.00,oldPrice:240.30,discount:26,rating:4.7,reviews:0,stock:0,badge:'ltd',
    installments:'6x R$ 29,67',cat:'games',
@@ -1770,7 +1770,7 @@ function renderProducts(list){
           <div class="stock-lbl"><span class="sl-hot">Restam ${p.stock} un.</span><span class="sl-dim">Limitado</span></div>
           <div class="stock-track"><div class="stock-fill" style="width:${Math.min(100,p.stock*3)}%"></div></div>
         </div>
-        <button class="btn-cart" onclick="event.stopPropagation();quickAdd(${p.id})">🛒 Adicionar</button>
+        <button class="btn-cart" onclick="event.stopPropagation();quickAdd(${p.id})">${p.wixUrl?'🛒 Comprar':'🛒 Adicionar'}</button>
       </div>
     </div>`;
   }).join('');
@@ -1818,6 +1818,8 @@ function handleSearch(val){
 // ══════ CART ══════
 function quickAdd(id){
   const p=PRODUCTS.find(x=>x.id===id);if(!p)return;
+  // Redireciona para a página do produto no Wix
+  if(p.wixUrl){ window.open(p.wixUrl,'_blank'); return; }
   if(cart[id])cart[id].qty++;else cart[id]={product:p,qty:1};
   updBadge();toast(p.name+' adicionado!',p.emoji,'Carrinho atualizado ✓');
 }
@@ -1886,6 +1888,10 @@ function applyCoupon(){
 }
 function goCheckout(){
   if(!Object.keys(cart).length){toast('Carrinho vazio','⚠️','Adicione produtos antes');return;}
+  // Se há itens com wixUrl, vai para a loja Wix
+  const keys=Object.keys(cart);
+  const firstWix=keys.map(k=>cart[k].product).find(p=>p.wixUrl);
+  if(firstWix){ closeCart(); window.open('https://www.blockshoponline.com/cart','_blank'); return; }
   closeCart();showPage('checkout');
 }
 
@@ -1915,7 +1921,7 @@ function renderWL(){
         <div class="p-brand">${p.brand}</div>
         <div class="p-name">${p.name}</div>
         <div class="p-price-row"><span class="p-old">R$ ${p.oldPrice.toLocaleString('pt-BR')}</span><span class="p-curr">R$ ${p.price.toLocaleString('pt-BR')}</span><span class="p-disc">−${p.discount}%</span></div>
-        <button class="btn-cart" onclick="event.stopPropagation();quickAdd(${p.id})">🛒 Adicionar</button>
+        <button class="btn-cart" onclick="event.stopPropagation();quickAdd(${p.id})">${p.wixUrl?'🛒 Comprar':'🛒 Adicionar'}</button>
       </div>
     </div>`;
   }).join('');
@@ -1971,6 +1977,16 @@ function openProductModal(id){
   document.querySelectorAll('.m-tab-pane').forEach(c=>c.classList.remove('active'));
   document.querySelector('.m-tab-btn').classList.add('active');
   document.getElementById('tab-desc').classList.add('active');
+  // Update button labels based on wixUrl
+  const addBtn=document.getElementById('modalAddBtn');
+  const buyBtn=document.getElementById('modalBuyBtn');
+  if(p.wixUrl){
+    if(addBtn) addBtn.innerHTML='🛒 Adicionar ao Carrinho Wix';
+    if(buyBtn) buyBtn.innerHTML='⚡ Comprar Agora no Wix →';
+  } else {
+    if(addBtn) addBtn.innerHTML='🛒 Adicionar ao Carrinho';
+    if(buyBtn) buyBtn.innerHTML='⚡ Comprar Agora';
+  }
   document.getElementById('modalOverlay').classList.add('open');
   document.body.style.overflow='hidden';
 }
@@ -1985,8 +2001,16 @@ function switchTab(id,btn){
   document.querySelectorAll('.m-tab-pane').forEach(c=>c.classList.remove('active'));
   btn.classList.add('active');document.getElementById('tab-'+id).classList.add('active');
 }
-function addFromModal(){if(!currentProd)return;addToCart(currentProd.id,modalQty,selColor,selStor);closeModal();}
-function buyNow(){if(!currentProd)return;addToCart(currentProd.id,modalQty,selColor,selStor);closeModal();showPage('checkout');}
+function addFromModal(){
+  if(!currentProd)return;
+  if(currentProd.wixUrl){ closeModal(); window.open(currentProd.wixUrl,'_blank'); return; }
+  addToCart(currentProd.id,modalQty,selColor,selStor);closeModal();
+}
+function buyNow(){
+  if(!currentProd)return;
+  if(currentProd.wixUrl){ closeModal(); window.open(currentProd.wixUrl,'_blank'); return; }
+  addToCart(currentProd.id,modalQty,selColor,selStor);closeModal();showPage('checkout');
+}
 
 // ══════ CHECKOUT ══════
 function renderCheckout(){
