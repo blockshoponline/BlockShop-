@@ -105,7 +105,7 @@ const PRODUCTS = [
 
 const CATS=[
   {id:'all',icon:'✨',name:'Todos',count:PRODUCTS.length},
-  {id:'wearable',icon:'⌚',name:'Wearables',count:3},
+  {id:'wearable',icon:'⌚',name:'Wearables',count:2},
   {id:'audio',icon:'🎧',name:'Áudio',count:4},
   {id:'games',icon:'🎮',name:'Games',count:2},
   {id:'acessorios',icon:'📷',name:'Acessórios',count:2},
