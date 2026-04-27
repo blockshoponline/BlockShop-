@@ -1,4 +1,4 @@
-/* ═══════════════════════════════════════════════════════
+/* ════════════════════════════════════════════════════
    BLOCK SHOP — Dados dos Produtos, Avaliações e Categorias
    ► EDITE AQUI para adicionar/remover/editar produtos
    ► Altere img: para o caminho da sua foto
