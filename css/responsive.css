@@ -1,0 +1,301 @@
+/* ═══════════════════════════════════════════════════════
+   BLOCK SHOP — Responsivo e Animações Interativas
+   ► @media tablet <= 1024px
+   ► @media mobile  <= 768px
+   ► @media small   <= 420px
+   ► Animações: hover, pulse, bounce, float, ripple
+═══════════════════════════════════════════════════════ */
+
+/* ══════════════════════════════
+   RESPONSIVE — TABLET 1024px
+══════════════════════════════ */
+@media(max-width:1024px){
+  .foot-grid{grid-template-columns:1fr 1fr;gap:28px}
+  .checkout-wrap{grid-template-columns:1fr;padding-top:calc(var(--nav-h) + 20px)}
+  .order-box-wrap{position:relative;top:0}
+  .hero-visual{display:none}
+  .hero{padding:calc(var(--top-total) + 30px) 32px 60px}
+}
+
+/* ══════════════════════════════
+   RESPONSIVE — MOBILE 768px
+══════════════════════════════ */
+@media(max-width:768px){
+  /* ── NAV ── */
+  :root{--nav-h:56px}
+  nav{padding:0 14px;gap:6px;height:56px}
+  .nav-center,.nav-search{display:none}
+  .hamburger{display:flex}
+  .logo-domain{display:none}
+  .logo-text{font-size:16px}
+  /* Esconde o texto "Carrinho", mostra só ícone + badge */
+  .cart-nav-btn{padding:8px 10px;gap:0;font-size:0}
+  .cart-nav-btn svg{display:block}
+  .cart-nav-btn .n-badge{font-size:9px}
+  /* Ícone de coração menor */
+  .icon-btn{width:34px;height:34px}
+
+  /* ── FLASH BAR ── */
+  :root{--flash-h:36px;--ticker-h:30px}
+  .flash-bar{
+    padding:0 12px;gap:8px;
+    display:flex;align-items:center;justify-content:space-between;
+    height:var(--flash-h);overflow:hidden;
+  }
+  .flash-left{display:flex;align-items:center;gap:6px;flex:1;min-width:0}
+  .flash-text{font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .flash-pill{font-size:9px;padding:2px 6px;flex-shrink:0}
+  .countdown{display:flex;gap:3px;flex-shrink:0}
+  .cd-unit{min-width:30px;padding:2px 4px;border-radius:5px}
+  .cd-num{font-size:12px;line-height:1.2}
+  .cd-lbl{font-size:7px}
+  .flash-cta{
+    flex-shrink:0;
+    font-size:10px;padding:5px 9px;border-radius:6px;
+    white-space:nowrap
+  }
+
+  /* ── HERO ── */
+  .hero{
+    padding:calc(var(--top-total) + 14px) 16px 40px;
+    min-height:auto
+  }
+  .hero h1{
+    font-size:clamp(32px,9vw,44px);
+    letter-spacing:-1.5px;
+    margin-bottom:14px
+  }
+  .hero-sub{font-size:14px;margin-bottom:24px}
+  .hero-badge{font-size:11px;padding:5px 12px;margin-bottom:18px}
+  .hero-ctas{flex-direction:column;gap:10px}
+  .btn-primary,.btn-secondary{
+    width:100%;justify-content:center;
+    padding:13px 20px;font-size:14px
+  }
+  .hero-stats{
+    gap:16px;margin-top:28px;padding-top:22px;
+    display:grid;grid-template-columns:repeat(3,1fr)
+  }
+  .stat-n{font-size:20px}
+  .stat-l{font-size:10px}
+  .hero-visual{display:none}
+
+  /* ── TRUST BAR ── */
+  .trust-bar{padding:10px 14px;gap:20px}
+  .trust-item{font-size:12px}
+
+  /* ── SECTIONS ── */
+  .section{padding:36px 14px}
+  .s-title{font-size:clamp(22px,6vw,32px);letter-spacing:-1px}
+  .s-sub{font-size:14px}
+
+  /* ── PRODUCTS ── */
+  .products-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .p-img{height:150px}
+  .p-img img{padding:10px}
+  .p-body{padding:10px}
+  .p-curr{font-size:16px}
+  .p-name{font-size:12px}
+  .p-brand{font-size:9px}
+  .p-install{font-size:11px}
+  .p-badge{font-size:9px;padding:3px 7px}
+  .btn-cart{padding:9px;font-size:12px}
+  .stock-lbl{font-size:10px}
+
+  /* ── CATEGORIES ── */
+  .cats-grid{grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:8px}
+  .cat-card{padding:14px 10px}
+  .cat-icon{font-size:22px;margin-bottom:6px}
+  .cat-name{font-size:12px}
+  .cat-count{font-size:10px}
+
+  /* ── PROMO BANNERS ── */
+  .promo-grid{grid-template-columns:1fr;padding:0 14px 40px;gap:10px}
+  .promo-card{min-height:140px;padding:22px 18px}
+  .promo-card h3{font-size:18px}
+  .promo-emoji{font-size:44px;right:16px}
+
+  /* ── FEATURES ── */
+  .feats-grid{
+    margin:0 14px 40px;
+    grid-template-columns:1fr 1fr
+  }
+  .feat-item{
+    border-right:none;border-bottom:1px solid var(--border);
+    padding:18px 14px
+  }
+  .feat-item:nth-child(odd){border-right:1px solid var(--border)}
+  .feat-item:last-child{border-bottom:none}
+  .feat-title{font-size:13px}
+  .feat-desc{font-size:12px}
+
+  /* ── REVIEWS ── */
+  .revs-grid{grid-template-columns:1fr;gap:10px}
+
+  /* ── NEWSLETTER ── */
+  .nl-wrap{margin:0 14px 40px;padding:24px 16px}
+  .nl-wrap h2{font-size:22px}
+  .nl-wrap p{font-size:14px}
+  .nl-form{flex-direction:column;gap:8px}
+  .nl-form input,.nl-form button{width:100%}
+
+  /* ── FOOTER ── */
+  footer{padding:28px 14px 18px}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:20px}
+  .foot-col h4{font-size:11px}
+  .foot-col ul li a{font-size:12px}
+  .foot-desc{max-width:100%;font-size:12px}
+  .foot-bottom{flex-direction:column;align-items:flex-start;gap:10px;font-size:11px}
+
+  /* ── CART DRAWER ── */
+  .cart-drawer{width:100%}
+
+  /* ── PRODUCT MODAL ── */
+  .modal-overlay{padding:0;align-items:flex-end}
+  .p-modal{
+    border-radius:var(--rxl) var(--rxl) 0 0;
+    max-height:92vh;overflow-y:auto;
+    width:100%
+  }
+  .modal-grid{grid-template-columns:1fr}
+  .modal-img-side{
+    border-right:none;border-bottom:1px solid var(--border);
+    border-radius:var(--rxl) var(--rxl) 0 0;
+    min-height:200px;padding:20px
+  }
+  .modal-big-img{width:120px;height:120px}
+  .modal-big-emoji{font-size:72px}
+  .modal-info{padding:18px 16px}
+  .m-name{font-size:18px;padding-right:32px}
+  .m-curr{font-size:26px}
+
+  /* ── CHECKOUT ── */
+  .checkout-wrap{
+    grid-template-columns:1fr;
+    padding:calc(var(--top-total) + 10px) 14px 40px;
+    gap:16px
+  }
+  .order-box-wrap{position:relative;top:0}
+  .form-grid{grid-template-columns:1fr}
+  .fg.full{grid-column:1}
+  .co-title{font-size:18px}
+
+  /* ── SUCCESS ── */
+  .success-card{padding:24px 16px}
+  .s-steps{gap:6px}
+  .ss-step{padding:10px 6px}
+  .ss-lbl{font-size:10px}
+
+  /* ── WISHLIST ── */
+  .wl-page{padding:calc(var(--top-total) + 10px) 14px 40px}
+
+  /* ── TOAST ── */
+  .toast{bottom:14px;right:14px;left:14px;max-width:100%}
+}
+
+/* ══════════════════════════════
+   RESPONSIVE — SMALL 420px
+══════════════════════════════ */
+@media(max-width:420px){
+  .hero h1{font-size:clamp(28px,8vw,36px)}
+  .hero-stats{grid-template-columns:repeat(3,1fr);gap:10px}
+  .stat-n{font-size:18px}
+
+  /* Flash bar ainda menor */
+  :root{--flash-h:32px}
+  .flash-text{display:none}
+  .cd-unit{min-width:28px;padding:2px 3px}
+  .cd-num{font-size:11px}
+  .flash-cta{font-size:10px;padding:4px 8px}
+
+  /* Nav */
+  nav{padding:0 12px}
+  .logo-text{font-size:15px}
+
+  /* Products 2 colunas fixas */
+  .products-grid{grid-template-columns:1fr 1fr;gap:8px}
+  .p-img{height:130px}
+  .p-curr{font-size:15px}
+
+  /* Cats */
+  .cats-grid{grid-template-columns:repeat(3,1fr)}
+
+  /* Feat grid coluna única em telas muito pequenas */
+  .feats-grid{grid-template-columns:1fr}
+  .feat-item:nth-child(odd){border-right:none}
+  .feat-item{border-right:none}
+}
+
+/* ══════════════════════════════
+   MELHORIAS INTERATIVAS & UX
+══════════════════════════════ */
+
+/* Pulse no botão principal do hero */
+@keyframes pulse-btn{0%,100%{box-shadow:0 0 0 0 rgba(255,63,63,.4)}70%{box-shadow:0 0 0 14px rgba(255,63,63,0)}}
+.btn-primary{animation:pulse-btn 2.5s ease-in-out infinite}
+.btn-primary:hover{animation:none}
+
+/* Glow nos cards de produto ao hover */
+.p-card::after{
+  content:'';position:absolute;inset:0;border-radius:inherit;
+  background:radial-gradient(ellipse 60% 40% at 50% 0%,rgba(255,63,63,.07) 0%,transparent 70%);
+  opacity:0;transition:opacity .3s;pointer-events:none;
+}
+.p-card:hover::after{opacity:1}
+
+/* Badge de desconto animado */
+.p-disc{animation:disc-pop .3s ease forwards}
+@keyframes disc-pop{0%{transform:scale(.8)}100%{transform:scale(1)}}
+
+/* Botão carrinho — ripple effect */
+.btn-cart{position:relative;overflow:hidden}
+.btn-cart::after{
+  content:'';position:absolute;inset:0;
+  background:rgba(255,255,255,.15);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .3s ease;
+}
+.btn-cart:hover::after{transform:scaleX(1)}
+
+/* Category card — borda animada */
+.cat-card{transition:all .25s cubic-bezier(.34,1.56,.64,1)}
+.cat-card:hover{transform:translateY(-4px) scale(1.03)}
+
+/* Feature items — icon bounce */
+.feat-item:hover .feat-icon{animation:icon-bounce .4s ease}
+@keyframes icon-bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+/* Review cards — lift */
+.rev-card{transition:transform .25s ease,box-shadow .25s ease}
+.rev-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.3)}
+
+/* Float cards do hero — animação de entrada */
+.float-card{animation:float-in .6s ease both}
+.fc1{animation-delay:.3s}
+.fc2{animation-delay:.5s}
+@keyframes float-in{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+
+/* Ticker hover — pausa a animação */
+.ticker-wrap:hover .ticker-track{animation-play-state:paused}
+
+/* Barra de estoque — animação de preenchimento */
+.stock-fill{animation:fill-bar .8s ease both}
+@keyframes fill-bar{from{width:0!important}to{}}
+
+/* Mobile tap highlight removido */
+*{-webkit-tap-highlight-color:transparent}
+
+/* Scroll suave em todo o documento */
+html{scroll-padding-top:var(--top-total)}
+
+/* Placeholder animado nos inputs */
+.f-inp:focus::placeholder{opacity:.5;transition:opacity .2s}
+
+/* Smooth transition entre pages */
+.page.active{animation:page-in .25s ease both}
+@keyframes page-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* Carrinho badge — pula quando muda */
+@keyframes badge-pop{0%{transform:scale(1)}50%{transform:scale(1.5)}100%{transform:scale(1)}}
+.n-badge.pop{animation:badge-pop .3s ease}
+
