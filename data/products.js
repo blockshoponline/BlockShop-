@@ -7,15 +7,6 @@
 
 const PRODUCTS = [
 
-  // ── PRODUTO 1 — Anel Smart DAIPAN (foto própria) ──
-  {id:1,brand:'DAIPAN',name:'Anel Smart Inteligente DAIPAN',
-   img:'images/products/anel-smart-daipan.jpg',
-   emoji:'💍',price:49.98,oldPrice:64.00,discount:22,rating:4.8,reviews:312,stock:40,badge:'hot',
-   installments:'3x R$ 16,66 sem juros',cat:'wearable',
-   colors:['#C0C0C0','#1A1A1A','#FFD700'],colorNames:['Prata','Preto','Dourado'],
-   storage:['Tam. 7','Tam. 8','Tam. 9','Tam. 10','Tam. 11','Tam. 12'],
-   desc:'O Anel Smart Inteligente DAIPAN combina tecnologia e estilo em um acessório unissex sofisticado. Monitora temperatura corporal em tempo real, registra atividade física e envia notificações diretamente no anel. Feito em aço inoxidável premium — ideal para uso diário, treinos e ocasiões especiais.',
-   specs:[['Marca','DAIPAN'],['Modelo','R007'],['Material','Aço inoxidável premium'],['Largura','8 mm'],['Funções','Temperatura, fitness, notificações'],['Gênero','Unissex'],['Compatível','Universal']]},
   // ── PRODUTO 2 ──
   {id:2,brand:'New',name:'New Bluetooth Earphones Handfree LED Dispay Headphones Bluetooth ...',
    img:'https://static.wixstatic.com/media/cc7a6c_a2c5680f0f7c49078e13d2d779c84be2~mv2.jpg',
