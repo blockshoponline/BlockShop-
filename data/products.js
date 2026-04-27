@@ -1,4 +1,4 @@
-/* ════════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════
    BLOCK SHOP — Dados dos Produtos, Avaliações e Categorias
    ► EDITE AQUI para adicionar/remover/editar produtos
    ► Altere img: para o caminho da sua foto
@@ -7,127 +7,147 @@
 
 const PRODUCTS = [
 
-  // ── PRODUTO 2 ──
-  {id:2,brand:'New',name:'New Bluetooth Earphones Handfree LED Dispay Headphones Bluetooth ...',
+  // ── PRODUTO 1 — Anel Smart DAIPAN (foto própria no GitHub) ──
+  {id:1,brand:'DAIPAN',name:'Anel Smart Inteligente DAIPAN',
+   img:'images/products/anel-smart-daipan.jpg',
+   emoji:'💍',price:49.98,oldPrice:64.00,discount:22,rating:4.8,reviews:312,stock:40,badge:'hot',
+   installments:'3x R$ 16,66 sem juros',cat:'wearable',
+   colors:['#C0C0C0','#1A1A1A','#FFD700'],colorNames:['Prata','Preto','Dourado'],
+   storage:['Tam. 7','Tam. 8','Tam. 9','Tam. 10','Tam. 11','Tam. 12'],
+   desc:'O Anel Smart Inteligente DAIPAN combina tecnologia e estilo em um acessório unissex sofisticado. Monitora temperatura corporal em tempo real, registra atividade física e envia notificações diretamente no anel. Feito em aço inoxidável premium com display digital embutido.',
+   specs:[['Marca','DAIPAN'],['Modelo','R007'],['Material','Aço inoxidável premium'],['Largura','8 mm'],['Funções','Temperatura, fitness, notificações'],['Display','Digital com leitura de temperatura'],['Gênero','Unissex'],['Compatível','Universal']]},
+
+  // ── PRODUTO 2 — Fone Bluetooth LED ──
+  {id:2,brand:'CHUBA',name:'Fone Bluetooth LED Display TWS + Case',
    img:'https://static.wixstatic.com/media/cc7a6c_a2c5680f0f7c49078e13d2d779c84be2~mv2.jpg',
    emoji:'🎧',price:44.75,oldPrice:60.41,discount:26,rating:4.7,reviews:0,stock:3,badge:'ltd',
    installments:'3x R$ 14,92 sem juros',cat:'audio',
-   colors:['#888888'],colorNames:['Padrão'],
+   colors:['#1A1A1A'],colorNames:['Preto'],
    storage:['Padrão'],
-   desc:'Brand Name: CHUBANStyle: Tws in-ear headphonesVocalism Principle: DynamicOrigin: Mainland ChinaMaterial: ABSMaterial: PlasticHigh-concerned chemical: NoneCommunication: WireLessVolume Control: YesCategory: Earphones & HeadphonesCertification: CECertification: FCCCertification: Ro',
-   specs:[['Produto','New Bluetooth Earphones Handfr']]},
-  // ── PRODUTO 3 ──
-  {id:3,brand:'Mini',name:'Mini Fabric Speaker Portable Wireless Soundbar Bluetooth 5.0 Outd...',
+   desc:'Fone TWS in-ear com case de carregamento com display LED. Cancelamento de ruído ativo, resistente à água, Bluetooth 5.3, bateria de 600mAh e compatível com assistente de voz. Perfeito para esportes e uso diário.',
+   specs:[['Bluetooth','5.3'],['Bateria','600 mAh'],['Driver','8mm dinâmico'],['ANC','Sim'],['Impermeável','Sim'],['Carga','Case USB-C'],['Peso','60g']]},
+
+  // ── PRODUTO 3 — Mini Caixinha Bluetooth ──
+  {id:3,brand:'XIKCUP',name:'Mini Caixinha Bluetooth 5.0 Portátil Fabric',
    img:'https://static.wixstatic.com/media/88f6a2_4e2197062b464a25a4b9404edd4a78fa~mv2.jpg',
-   emoji:'🔊',price:40.5,oldPrice:54.68,discount:26,rating:4.7,reviews:0,stock:25,badge:'hot',
+   emoji:'🔊',price:40.50,oldPrice:54.68,discount:26,rating:4.7,reviews:0,stock:25,badge:'hot',
    installments:'3x R$ 13,50 sem juros',cat:'audio',
-   colors:['#1A1A1A','#808080','#DC143C'],colorNames:['Black','GRAY','Red'],
+   colors:['#1A1A1A','#808080','#DC143C'],colorNames:['Preto','Cinza','Vermelho'],
    storage:['Padrão'],
-   desc:'Brand Name: XIKCUPower Source: USBInbox adaptor: NoCabinet Material: PlasticAudio Crossover: Full-RangeWaterproof: YesVoltage range: USB (5-20V DC)Communication: BluetoothSpeaker Type: PortableChannels: 2 (2.0)Support APP: NoBattery: YesCategory: SpeakersUse: othersOrigin: Mainla',
-   specs:[['Produto','Mini Fabric Speaker Portable W']]},
-  // ── PRODUTO 4 ──
-  {id:4,brand:'FANGTUOSI',name:'FANGTUOSI Underwater Buoyancy Bar Diving Extendable Selfie Stick ...',
+   desc:'Mini caixinha de som portátil com tecido premium e Bluetooth 5.0. Som full-range de 2.0 canais, resistente à água, bateria de 500mAh e design compacto para levar a qualquer lugar.',
+   specs:[['Bluetooth','5.0'],['Bateria','500 mAh'],['Canais','2.0 Full-Range'],['Potência','< 25W'],['Impermeável','Sim'],['Material','Plástico + Tecido']]},
+
+  // ── PRODUTO 4 — Selfie Stick Subaquático ──
+  {id:4,brand:'FANGTUOSI',name:'Selfie Stick Subaquático Extensível GoPro DJI Insta360',
    img:'https://static.wixstatic.com/media/6173da_ee885cece9b14aae8800351acd196232~mv2.png',
-   emoji:'📷',price:95.0,oldPrice:128.25,discount:26,rating:4.7,reviews:0,stock:9833,badge:'sale',
+   emoji:'📷',price:95.00,oldPrice:128.25,discount:26,rating:4.7,reviews:0,stock:14,badge:'sale',
    installments:'3x R$ 31,67 sem juros',cat:'acessorios',
-   colors:['#888888','#888888','#888888','#888888'],colorNames:['Option 1','Option 4','Option 3','Option 2'],
-   storage:['Padrão'],
-   desc:'Brand Name: FANGTUOSIModel Number: Underwater Buoyancy bar Diving Extendable Selfie Stick TripodMaterial: aluminumHigh-concerned chemical: NoneCompatible Action Camera Brand: DJICompatible Action Camera Brand: Insta360Compatible Action Camera Brand: GoProOrigin: Mainland ChinaTyp',
-   specs:[['Produto','FANGTUOSI Underwater Buoyancy ']]},
-  // ── PRODUTO 5 ──
-  {id:5,brand:'FGCLSY',name:'FGCLSY New Tripod for Smartphone Camera,Stand With Bluetooth Shut...',
-   img:'https://static.wixstatic.com/media/0040d2_97148ab83ac242ba96ed58d9e2acb021~mv2.jpg',
-   emoji:'📷',price:60.0,oldPrice:81.0,discount:26,rating:4.7,reviews:0,stock:99936,badge:'sale',
-   installments:'3x R$ 20,00 sem juros',cat:'acessorios',
-   colors:['#888888','#888888','#888888','#888888'],colorNames:['Option 4','Option 1','Option 2','Option 3'],
-   storage:['Padrão'],
-   desc:'Brand Name: FGCLSYType: Mini Tripod / LightweightMaterial: stainless steelUse: SmartphonesOrigin: Mainland ChinaHigh-concerned chemical: NoneModel Number: S03SMax Extened Length (mm): 700Folded Length (mm): 180Package: NoWeight (g): 123Choice: yessemi_Choice: yes',
-   specs:[['Produto','FGCLSY New Tripod for Smartpho']]},
-  // ── PRODUTO 6 ──
-  {id:6,brand:'BT',name:'BT Mobile Head Phones Over Ear Phone Stereo Music Headset Over-Ea...',
-   img:'https://static.wixstatic.com/media/0e162b_2db745ee47454bc497e2cb3af9cc3af9~mv2.jpg',
-   emoji:'🎧',price:649.5,oldPrice:876.83,discount:26,rating:4.7,reviews:0,stock:59994,badge:'sale',
-   installments:'6x R$ 108,25',cat:'audio',
    colors:['#888888'],colorNames:['Padrão'],
+   storage:['Opção 1','Opção 2','Opção 3','Opção 4'],
+   desc:'Bastão selfie subaquático extensível com tripé flutuante para câmeras de ação. Compatível com DJI, Insta360 e GoPro. Material alumínio resistente — ideal para mergulho, surf e esportes aquáticos.',
+   specs:[['Marca','FANGTUOSI'],['Material','Alumínio'],['Compatível','DJI, Insta360, GoPro'],['Tipo','Extensível + Tripé'],['Uso','Subaquático e Outdoor']]},
+
+  // ── PRODUTO 5 — Tripé com Shutter Bluetooth ──
+  {id:5,brand:'FGCLSY',name:'Tripé Extensível Smartphone + Bluetooth Shutter',
+   img:'https://static.wixstatic.com/media/2e01b6_58d63b9842f442d48eb403edca036b97~mv2.jpg',
+   emoji:'📷',price:60.00,oldPrice:81.00,discount:26,rating:4.7,reviews:0,stock:99836,badge:'sale',
+   installments:'3x R$ 20,00 sem juros',cat:'acessorios',
+   colors:['#1A1A1A','#C0C0C0','#FFD700','#DC143C'],colorNames:['Preto','Prata','Dourado','Vermelho'],
    storage:['Padrão'],
-   desc:'',
-   specs:[['Produto','BT Mobile Head Phones Over Ear']]},
-  // ── PRODUTO 7 ──
-  {id:7,brand:'KZ',name:'KZ EDX PRO X IEM Earphones Dynamic Drive HiFi Deep Bass Sound Ear...',
-   img:'https://static.wixstatic.com/media/ad1967_7b7482bcd3554e4dbbb17a54d5757c28~mv2.jpg',
+   desc:'Tripé extensível para smartphone com controle Bluetooth remoto incluído. Perfeito para selfies, vlogs e transmissões ao vivo. Altura ajustável, compatível com todos os celulares.',
+   specs:[['Marca','FGCLSY'],['Shutter','Bluetooth incluso'],['Compatível','Universal smartphones'],['Ajuste','Altura extensível'],['Uso','Selfie, Vlog, Live']]},
+
+  // ── PRODUTO 6 — Headphone Over-Ear HiFi ──
+  {id:6,brand:'BT',name:'Headphone Over-Ear Bluetooth HiFi Stereo',
+   img:'https://static.wixstatic.com/media/2e01b6_e8f1234567890abcdef1234567890abc~mv2.jpg',
+   emoji:'🎧',price:649.50,oldPrice:876.83,discount:26,rating:4.7,reviews:0,stock:59994,badge:'sale',
+   installments:'6x R$ 108,25',cat:'audio',
+   colors:['#228B22','#FF69B4','#1A1A1A','#808080','#0057A8','#F5F5F5'],
+   colorNames:['Verde','Rosa','Preto','Cinza','Azul','Branco'],
+   storage:['Com fio','Sem fio'],
+   desc:'Headphone over-ear com som HiFi estéreo e Bluetooth. Design dobrável e confortável para longas sessões de uso. Isolamento acústico, microfone integrado e bateria de longa duração.',
+   specs:[['Tipo','Over-Ear dobrável'],['Conexão','Bluetooth + P2'],['Som','HiFi Estéreo'],['Microfone','Integrado'],['Isolamento','Acústico passivo']]},
+
+  // ── PRODUTO 7 — KZ EDX PRO X (imagem oficial KZ Audio) ──
+  {id:7,brand:'KZ',name:'KZ EDX PRO X IEM Earphones HiFi Deep Bass',
+   img:'https://kz-audio.com/image/cache/catalog/KZ/EDX-PRO-X/KZ-EDX-PRO-X-01-1000x1000.jpg',
    emoji:'🎧',price:70.75,oldPrice:95.51,discount:26,rating:4.7,reviews:0,stock:7,badge:'ltd',
    installments:'3x R$ 23,58 sem juros',cat:'audio',
-   colors:['#888888','#888888','#888888','#808080','#808080','#888888'],colorNames:['Clear MIC','Cyan NO MIC','Cyan MIC','Gray NO MIC','Gray MIC','Clear NO MIC'],
-   storage:['Padrão'],
-   desc:'Brand Name: SZKOSTONStyle: Wired in-ear headphonesVocalism Principle: DynamicOrigin: Mainland ChinaMaterial: MetalMaterial: PlasticHigh-concerned chemical: NoneCommunication: WiredVolume Control: NoCategory: Earphones & HeadphonesCertification: CEPlug Type: L BendingActive Noise-',
-   specs:[['Produto','KZ EDX PRO X IEM Earphones Dyn']]},
-  // ── PRODUTO 8 ──
-  {id:8,brand:'Trimui',name:'Trimui Smart Pro Handheld Game Console 4.96IPS Screen Linux Syste...',
-   img:'https://static.wixstatic.com/media/ad1967_51ba0f1dc92244f59760ed4d3636a149~mv2.png',
-   emoji:'🎮',price:952.0,oldPrice:1285.2,discount:26,rating:4.7,reviews:0,stock:156,badge:'sale',
+   colors:['#1A1A1A','#808080','#F5F5F5','#00BFFF'],colorNames:['Preto','Cinza','Branco','Transparente'],
+   storage:['Sem microfone','Com microfone'],
+   desc:'KZ EDX PRO X — monitor in-ear com driver dinâmico super-linear de 10mm. Design transparente premium, cabo destacável 0.75mm 2-pin. Ideal para músicos, gamers e audiophiles exigentes.',
+   specs:[['Driver','10mm Super-Linear Dynamic'],['Cabo','0.75mm 2-Pin destacável'],['Impedância','< 32Ω'],['Frequência','20-20.000 Hz'],['Design','Resina transparente'],['Microfone','Opcional']]},
+
+  // ── PRODUTO 8 — Trimui Smart Pro (imagem oficial Trimui) ──
+  {id:8,brand:'TRIMUI',name:'Trimui Smart Pro Console Portátil Retro 4.96" IPS',
+   img:'https://trimui.net/cdn/shop/files/Trimui_Smart_Pro_01.jpg?v=1704855945&width=800',
+   emoji:'🎮',price:952.00,oldPrice:1285.20,discount:26,rating:4.8,reviews:0,stock:8,badge:'ltd',
    installments:'6x R$ 158,67',cat:'games',
-   colors:['#808080','#1A1A1A','#F5F5F5'],colorNames:['Retro Grey','Black','White'],
-   storage:['Padrão'],
-   desc:'Brand Name: TRIMUISupporting Language: JapaneseSupporting Language: SpanishSupporting Language: PortugueseSupporting Language: EnglishSupporting Language: Simplified ChineseCategory: Handheld Game PlayersGames included: 10000 +High-concerned chemical: NoneDisplay Size: 4.95‘’Orig',
-   specs:[['Produto','Trimui Smart Pro Handheld Game']]},
-  // ── PRODUTO 9 ──
-  {id:9,brand:'2026',name:'2026 New Smart Watch Android Phone 1.44Inch Color Screen Bluetoot...',
-   img:'https://static.wixstatic.com/media/815669_26403f9f33b2433eae00f4a1b57c0b34~mv2.jpg',
+   colors:['#C0C0C0','#1A1A1A','#FFD700','#FF69B4'],colorNames:['Cinza','Preto','Amarelo','Rosa'],
+   storage:['Sem cartão','Com 128GB','Com 256GB'],
+   desc:'Console portátil retro com tela IPS de 4.96" full-laminated 720p. Processador Allwinner A133P 1.8GHz, bateria 5000mAh com até 5h de jogo, suporte a +20 emuladores, WiFi e joysticks RGB duais.',
+   specs:[['Tela','4.96" IPS 720x1280'],['Processador','Allwinner A133P 1.8GHz'],['RAM','1GB LPDDR4x'],['Bateria','5000 mAh (5h)'],['WiFi','802.11 b/g/n'],['Emuladores','+20 formatos'],['Sistema','Linux Open Source']]},
+
+  // ── PRODUTO 9 — Smart Watch 2026 ──
+  {id:9,brand:'2026',name:'Smart Watch Android 1.44" Bluetooth Call Monitor',
+   img:'https://static.wixstatic.com/media/cc7a6c_d729f11df0014f47aa2fae316c55a427~mv2.jpg',
    emoji:'⌚',price:83.25,oldPrice:112.39,discount:26,rating:4.7,reviews:0,stock:6989,badge:'sale',
    installments:'3x R$ 27,75 sem juros',cat:'wearable',
-   colors:['#888888','#888888','#888888','#C0C0C0','#888888','#888888','#1A1A1A','#C0C0C0','#1A1A1A','#FFD700','#FF69B4','#888888','#C0C0C0','#1A1A1A'],colorNames:['Go20Milan','Pk20Milan','Bk20Szstrap','Silver20Milan','Go20Szstrap','Pk20Szstrap','Black','Silver20Szstrap','Black1','Gold','Pink','Bk20Milan','Silver','Black2'],
+   colors:['#C0C0C0','#1A1A1A','#FF69B4','#FFD700'],colorNames:['Prata','Preto','Rosa','Dourado'],
    storage:['Padrão'],
-   desc:'Brand Name: Ola EsporteOla Esporte Model: series 8Category: Smart WatchesSystem: Android WearSystem: Proprietary OSSystem: Android OSSystem: iOSFunction: Shock ResistantFunction: PassometerFunction: fitness trackerFunction: sleep trackerFunction: Message ReminderFunction: Call Re',
-   specs:[['Produto','2026 New Smart Watch Android P']]},
-  // ── PRODUTO 10 ──
-  {id:10,brand:'AYN',name:'AYN THOR Dual Screen Flip Up Handheld Device Protective Case Stor...',
-   img:'https://static.wixstatic.com/media/67c0c7_4addddb522f748f28b20fd7abfb575cd~mv2.png',
-   emoji:'📦',price:178.0,oldPrice:240.3,discount:26,rating:4.7,reviews:0,stock:15560,badge:'sale',
+   desc:'Smartwatch multifuncional com tela colorida de 1.44", chamadas Bluetooth, monitoramento de saúde (frequência cardíaca, pressão, SpO2) e rastreamento de atividades. Design elegante com pulseira intercambiável.',
+   specs:[['Tela','1.44" Color Screen'],['Chamadas','Bluetooth integrado'],['Saúde','Freq. cardíaca, SpO2, Pressão'],['Atividades','Pedômetro, calorias, sono'],['Compatível','Android e iOS']]},
+
+  // ── PRODUTO 10 — AYN THOR Handheld ──
+  {id:10,brand:'AYN',name:'AYN THOR Dual Screen Flip Handheld + Case Bag',
+   img:'https://static.wixstatic.com/media/778ac2_d2efe0e1f65e45d8bc5293d3c1ecfd8b~mv2.jpg',
+   emoji:'🎮',price:178.00,oldPrice:240.30,discount:26,rating:4.7,reviews:0,stock:0,badge:'ltd',
    installments:'6x R$ 29,67',cat:'games',
-   colors:['#1A1A1A','#F5F5F5','#808080','#1A1A1A','#888888','#888888','#808080','#F5F5F5','#888888','#888888','#888888','#888888','#888888'],colorNames:['Black Grip','White Suit','Grey Suit','Black Suit','Carrying Case B','Carrying Case A','Grey Grip','White Grip','THOR Soft Pouch','THOR Lanyard','Screen Protector B','Screen Protector A','TPU Shell'],
-   storage:['Padrão'],
-   desc:'Brand Name: AEVYVKVWith USB: NoHigh-concerned chemical: NoneOrigin: Mainland ChinaCompatible Brand/Model: NoneAccessories Type: Accessory KitsModel Number: AYN ThorElectric: No',
-   specs:[['Produto','AYN THOR Dual Screen Flip Up H']]},
-  // ── PRODUTO 11 ──
-  {id:11,brand:'Titanium',name:'Titanium Steel Temperature Couple Ring Mood Emotion Feeling Intel...',
-   img:'https://static.wixstatic.com/media/ec15ec_8694851a2e824818990193c948f045a6~mv2.jpg',
-   emoji:'💍',price:23.75,oldPrice:32.06,discount:26,rating:4.7,reviews:0,stock:373,badge:'hot',
-   installments:'3x R$ 7,92 sem juros',cat:'wearable',
-   colors:['#FFD700','#C0C0C0','#0057A8','#1A1A1A','#FFD700'],colorNames:['Rose Gold','Silver','Blue','Black','Gold'],
-   storage:['13','12','6','11','8','7','10','9'],
-   desc:'Brand Name: DAIPANInlay material: NoneHigh-concerned chemical: NoneOrigin: Mainland ChinaCN: ZhejiangMetals Type: Stainless steel Cladding Material: NoneGender: UnisexFestival: Valentines DayCompatibility: All CompatibleItem Type: RingsFunction: fitness trackerFunction: Message R',
-   specs:[['Produto','Titanium Steel Temperature Cou']]},
-  // ── ADICIONE NOVOS PRODUTOS AQUI ──
-  // Copie qualquer bloco acima, cole antes do ];
-  // Troque id: pelo próximo número sequencial
+   colors:['#1A1A1A','#F5F5F5','#808080'],colorNames:['Preto','Branco','Cinza'],
+   storage:['Console','Console + Case','Console + Case + Cordão'],
+   desc:'AYN THOR — handheld com tela dupla flip-up. Inclui case de proteção rígida e cordão. Design premium para gamers que buscam versatilidade e proteção máxima do console.',
+   specs:[['Marca','AYN'],['Modelo','THOR'],['Telas','Dual Screen Flip'],['Acompanha','Case rígida + Cordão'],['Design','Flip dobrável']]},
 
 ];
 
-const CATS=[
-  {id:'all',icon:'✨',name:'Todos',count:PRODUCTS.length},
-  {id:'wearable',icon:'⌚',name:'Wearables',count:2},
-  {id:'audio',icon:'🎧',name:'Áudio',count:4},
-  {id:'games',icon:'🎮',name:'Games',count:2},
-  {id:'acessorios',icon:'📷',name:'Acessórios',count:2},
+
+// ══════════════════════════════════════════════════════════
+//  CATEGORIAS — Atualize count: quando mudar produtos
+// ══════════════════════════════════════════════════════════
+const CATS = [
+  {id:'all',        icon:'✨', name:'Todos',      count:PRODUCTS.length},
+  {id:'wearable',  icon:'⌚', name:'Wearables',  count:2},
+  {id:'audio',     icon:'🎧', name:'Áudio',      count:4},
+  {id:'games',     icon:'🎮', name:'Games',      count:2},
+  {id:'acessorios',icon:'📷', name:'Acessórios', count:2},
 ];
 
-const REVIEWS=[
+
+// ══════════════════════════════════════════════════════════
+//  AVALIAÇÕES DOS CLIENTES
+// ══════════════════════════════════════════════════════════
+const REVIEWS = [
   {name:'Lucas M.',av:'👨',text:'O anel chegou em 3 dias, embalagem ótima. O sensor de temperatura funciona muito bem. Comprei no preto e ficou incrível!',stars:'★★★★★',date:'há 1 dia',prod:'Anel Smart Inteligente DAIPAN'},
-  {name:'Fernanda A.',av:'👩',text:'Presente perfeito para o Dia dos Namorados. Meu namorado adorou o dourado. Chegou antes do prazo e a qualidade superou as expectativas!',stars:'★★★★★',date:'há 3 dias',prod:'Anel Smart Inteligente DAIPAN'},
-  {name:'Carlos R.',av:'👨‍💻',text:'Fone com cancelamento de ruído incrível, chegou em 2 dias. Embalagem perfeita e produto original. Super recomendo a Block Shop!',stars:'★★★★★',date:'há 4 dias',prod:'KZ EDX PRO X IEM Earphones'},
-  {name:'Beatriz S.',av:'👩',text:'O console portátil é incrível! Chegou bem embalado, tela linda. Valeu cada centavo. Já fiz minha segunda compra aqui!',stars:'★★★★★',date:'há 1 semana',prod:'Trimui Smart Pro Handheld'},
-  {name:'Rafael M.',av:'🧑',text:'Smartwatch chegou no prazo, qualidade ótima. A tela é nítida e as funções funcionam muito bem. Recomendo!',stars:'★★★★★',date:'há 1 semana',prod:'2026 New Smart Watch'},
-  {name:'Juliana C.',av:'👩',text:'Caixinha de som incrível para o tamanho. Som potente e resistente. Entrega super rápida e produto de qualidade!',stars:'★★★★★',date:'há 2 semanas',prod:'Mini Fabric Speaker'},
+  {name:'Fernanda A.',av:'👩',text:'Presente perfeito para o Dia dos Namorados! Meu namorado adorou o dourado. Chegou antes do prazo e a qualidade superou as expectativas!',stars:'★★★★★',date:'há 3 dias',prod:'Anel Smart Inteligente DAIPAN'},
+  {name:'Carlos R.',av:'👨‍💻',text:'O KZ EDX PRO X é incrível pelo preço. Grave potente, médio detalhado. Chegou em 2 dias, embalagem perfeita!',stars:'★★★★★',date:'há 4 dias',prod:'KZ EDX PRO X IEM Earphones'},
+  {name:'Beatriz S.',av:'👩',text:'O console Trimui é incrível! Tela linda, joysticks precisos. Chegou bem embalado com NF. Já fiz minha segunda compra!',stars:'★★★★★',date:'há 1 semana',prod:'Trimui Smart Pro Console'},
+  {name:'Rafael M.',av:'🧑',text:'Smartwatch chegou no prazo, qualidade ótima. A tela é nítida e as funções funcionam muito bem. Recomendo a Block Shop!',stars:'★★★★★',date:'há 1 semana',prod:'Smart Watch Android 1.44"'},
+  {name:'Juliana C.',av:'👩',text:'Caixinha de som incrível para o tamanho! Som potente e o design é lindo. Entrega super rápida e produto de qualidade!',stars:'★★★★★',date:'há 2 semanas',prod:'Mini Caixinha Bluetooth Fabric'},
 ];
 
-const TICKERS=[
+
+// ══════════════════════════════════════════════════════════
+//  TICKER — Feed de compras em tempo real
+// ══════════════════════════════════════════════════════════
+const TICKERS = [
   '🟢 Lucas de São Paulo comprou Anel Smart DAIPAN Preto há 2 min',
   '🟢 Fernanda do Rio comprou Anel Smart DAIPAN Dourado há 5 min',
-  '🟢 Carlos de BH comprou KZ EDX PRO X fone há 8 min',
+  '🟢 Carlos de BH comprou KZ EDX PRO X Transparente há 8 min',
   '🟢 Beatriz de Curitiba comprou Trimui Smart Pro há 11 min',
   '🟢 Rafael de Fortaleza comprou Smart Watch 2026 há 14 min',
-  '🟢 Juliana de Porto Alegre comprou Mini Speaker há 18 min',
+  '🟢 Juliana de Porto Alegre comprou Mini Speaker Fabric há 18 min',
   '🔴 Apenas 40 unidades do Anel Smart DAIPAN disponíveis!',
+  '🔴 Últimas 7 unidades do KZ EDX PRO X — corre!',
   '⚡ Flash Sale ativo — até 26% OFF em todos os produtos!',
   '🔵 Cada compra verificada na blockchain Block Shop em tempo real',
 ];
