@@ -1537,112 +1537,160 @@ html{scroll-padding-top:var(--top-total)}
 </div>
 
 <script>
-// ══════════════════════════════════════
-//  PRODUTOS — imagens reais via CDN público
-// ══════════════════════════════════════
+/* ═══════════════════════════════════════════════════════
+   BLOCK SHOP — Dados dos Produtos, Avaliações e Categorias
+   ► EDITE AQUI para adicionar/remover/editar produtos
+   ► Altere img: para o caminho da sua foto
+   ► Altere REVIEWS para suas avaliações reais
+═══════════════════════════════════════════════════════ */
+
 const PRODUCTS = [
-  {id:1,brand:'Apple',name:'iPhone 16 Pro Max 256GB',
-   img:'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-9inch-deserttitanium?wid=400&hei=400&fmt=jpeg&qlt=90&.v=1724710173468',
-   emoji:'📱',price:7299,oldPrice:9499,discount:23,rating:4.9,reviews:2847,stock:18,badge:'hot',
-   installments:'12x R$ 607,92',cat:'smartphone',
-   colors:['#1C1C1E','#F5F5F0','#C4A882','#4A6FA5'],colorNames:['Titânio Preto','Titânio Branco','Titânio Deserto','Titânio Azul'],
-   storage:['128GB','256GB','512GB','1TB'],
-   desc:'O iPhone 16 Pro Max redefine o que um smartphone pode ser. Chip A18 Pro, câmera de 48MP com zoom óptico 5x, tela Super Retina XDR de 6.9" e bateria de até 33h.',
-   specs:[['Chip','Apple A18 Pro'],['Tela','6.9" Super Retina XDR'],['Câmera','48MP + 12MP Ultra Wide'],['Zoom','Óptico 5x'],['Bateria','Até 33h'],['5G','Sim'],['Face ID','Sim']]},
 
-  {id:2,brand:'Samsung',name:'Galaxy S25 Ultra 512GB',
-   img:'https://images.samsung.com/is/image/samsung/p6pim/br/2501/gallery/br-galaxy-s25-ultra-s938-sm-s938bzwpzto-thumb-544352064?$400_400_PNG$',
-   emoji:'📱',price:6199,oldPrice:8200,discount:24,rating:4.8,reviews:1923,stock:31,badge:'sale',
-   installments:'12x R$ 516,58',cat:'smartphone',
-   colors:['#1A1A2E','#F0F0F0','#2C4A2E','#7B3A2D'],colorNames:['Titanium Black','Titanium Silver','Titanium Green','Titanium Orange'],
-   storage:['256GB','512GB','1TB'],
-   desc:'Galaxy S25 Ultra com S Pen integrada, câmera de 200MP e Snapdragon 8 Elite. A experiência Android mais poderosa já criada.',
-   specs:[['Chip','Snapdragon 8 Elite'],['Tela','6.9" Dynamic AMOLED 2X'],['Câmera','200MP principal'],['S Pen','Integrada'],['Bateria','5000 mAh'],['5G','Sim'],['RAM','12 GB']]},
+  // ── PRODUTO 1 — Anel Smart DAIPAN (foto própria no GitHub) ──
+  {id:1,brand:'DAIPAN',name:'Anel Smart Inteligente DAIPAN',
+   img:'images/products/anel-smart-daipan.jpg',
+   emoji:'💍',price:49.98,oldPrice:64.00,discount:22,rating:4.8,reviews:312,stock:40,badge:'hot',
+   installments:'3x R$ 16,66 sem juros',cat:'wearable',
+   colors:['#C0C0C0','#1A1A1A','#FFD700'],colorNames:['Prata','Preto','Dourado'],
+   storage:['Tam. 7','Tam. 8','Tam. 9','Tam. 10','Tam. 11','Tam. 12'],
+   desc:'O Anel Smart Inteligente DAIPAN combina tecnologia e estilo em um acessório unissex sofisticado. Monitora temperatura corporal em tempo real, registra atividade física e envia notificações diretamente no anel. Feito em aço inoxidável premium com display digital embutido.',
+   specs:[['Marca','DAIPAN'],['Modelo','R007'],['Material','Aço inoxidável premium'],['Largura','8 mm'],['Funções','Temperatura, fitness, notificações'],['Display','Digital com leitura de temperatura'],['Gênero','Unissex'],['Compatível','Universal']]},
 
-  {id:3,brand:'Sony',name:'WH-1000XM6 Headphone',
-   img:'https://www.bhphotovideo.com/images/images500x500/sony_wh_1000xm5_s_wh_1000xm5_wireless_noise_canceling_overhead_1657026452_1739625.jpg',
-   emoji:'🎧',price:1499,oldPrice:2199,discount:32,rating:4.9,reviews:4102,stock:9,badge:'hot',
-   installments:'10x R$ 149,90',cat:'audio',
-   colors:['#1A1A1A','#F5F5F5','#8B4513'],colorNames:['Preto Midnight','Platina','Castanho'],
+  // ── PRODUTO 2 — Fone Bluetooth LED ──
+  {id:2,brand:'CHUBA',name:'Fone Bluetooth LED Display TWS + Case',
+   img:'https://static.wixstatic.com/media/cc7a6c_a2c5680f0f7c49078e13d2d779c84be2~mv2.jpg',
+   emoji:'🎧',price:44.75,oldPrice:60.41,discount:26,rating:4.7,reviews:0,stock:3,badge:'ltd',
+   installments:'3x R$ 14,92 sem juros',cat:'audio',
+   colors:['#1A1A1A'],colorNames:['Preto'],
    storage:['Padrão'],
-   desc:'O melhor cancelamento de ruído do mundo. Dual Noise Sensor Technology, 30h de bateria e áudio Hi-Res certificado.',
-   specs:[['Driver','40mm'],['Bateria','30 horas'],['Bluetooth','5.3'],['NFC','Sim'],['Peso','250g'],['Carga rápida','10 min = 5h']]},
+   desc:'Fone TWS in-ear com case de carregamento com display LED. Cancelamento de ruído ativo, resistente à água, Bluetooth 5.3, bateria de 600mAh e compatível com assistente de voz. Perfeito para esportes e uso diário.',
+   specs:[['Bluetooth','5.3'],['Bateria','600 mAh'],['Driver','8mm dinâmico'],['ANC','Sim'],['Impermeável','Sim'],['Carga','Case USB-C'],['Peso','60g']]},
 
-  {id:4,brand:'Apple',name:'MacBook Air M3 15"',
-   img:'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-midnight-select-20220606?wid=400&hei=400&fmt=jpeg&qlt=90&.v=1653007958192',
-   emoji:'💻',price:12499,oldPrice:15999,discount:22,rating:4.9,reviews:876,stock:5,badge:'ltd',
-   installments:'12x R$ 1.041,58',cat:'notebook',
-   colors:['#1C1C1E','#F5F5F0','#C0A882','#7BA7BC'],colorNames:['Meia-Noite','Estelar','Areia','Azul-Céu'],
-   storage:['8GB/256GB','8GB/512GB','16GB/512GB','16GB/1TB'],
-   desc:'Ultrafino e silencioso. MacBook Air M3 com chip M3, até 18h de bateria e tela Liquid Retina 15.3".',
-   specs:[['Chip','Apple M3'],['Tela','15.3" Liquid Retina'],['RAM','8GB ou 16GB'],['Bateria','Até 18h'],['Webcam','1080p FaceTime'],['Peso','1.51 kg']]},
-
-  {id:5,brand:'Razer',name:'BlackShark V2 Pro',
-   img:'https://assets3.razerzone.com/OPqhPVS5vCtnT9gBWJxLz5qnFxU=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fhf7%2Fhac%2F9223372036963803566%2Fblackshark-v2-pro-500x500.jpg',
-   emoji:'🎮',price:799,oldPrice:1099,discount:27,rating:4.7,reviews:3241,stock:44,badge:'sale',
-   installments:'6x R$ 133,17',cat:'games',
-   colors:['#1A1A1A','#FFFFFF'],colorNames:['Preto','Branco'],
+  // ── PRODUTO 3 — Mini Caixinha Bluetooth ──
+  {id:3,brand:'XIKCUP',name:'Mini Caixinha Bluetooth 5.0 Portátil Fabric',
+   img:'https://static.wixstatic.com/media/88f6a2_4e2197062b464a25a4b9404edd4a78fa~mv2.jpg',
+   emoji:'🔊',price:40.50,oldPrice:54.68,discount:26,rating:4.7,reviews:0,stock:25,badge:'hot',
+   installments:'3x R$ 13,50 sem juros',cat:'audio',
+   colors:['#1A1A1A','#808080','#DC143C'],colorNames:['Preto','Cinza','Vermelho'],
    storage:['Padrão'],
-   desc:'Headset sem fio para pro gamers. TriForce Titanium 50mm, cancelamento de ruído HyperClear e 70h de bateria.',
-   specs:[['Driver','50mm TriForce'],['Conexão','Wireless 2.4GHz'],['Bateria','70 horas'],['Peso','320g'],['Compatível','PC, PS5, Xbox']]},
+   desc:'Mini caixinha de som portátil com tecido premium e Bluetooth 5.0. Som full-range de 2.0 canais, resistente à água, bateria de 500mAh e design compacto para levar a qualquer lugar.',
+   specs:[['Bluetooth','5.0'],['Bateria','500 mAh'],['Canais','2.0 Full-Range'],['Potência','< 25W'],['Impermeável','Sim'],['Material','Plástico + Tecido']]},
 
-  {id:6,brand:'Apple',name:'Watch Series 10 GPS 46mm',
-   img:'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MQDY3ref_VW_34FR+watch-case-46-aluminum-jetblack-nc-s10_VW_34FR+watch-face-46-aluminum-jetblack-s10_VW_34FR?wid=400&hei=400&fmt=png&qlt=90&.v=1724769574145',
-   emoji:'⌚',price:3499,oldPrice:4499,discount:22,rating:4.8,reviews:1562,stock:22,badge:'new',
-   installments:'12x R$ 291,58',cat:'wearable',
-   colors:['#1C1C1E','#F5F5F0','#E8D5B7','#B8D4E8'],colorNames:['Alumínio Preto','Alumínio Prata','Alumínio Ouro','Alumínio Azul'],
-   storage:['GPS 42mm','GPS 46mm','GPS+Cell 42mm','GPS+Cell 46mm'],
-   desc:'O mais delgado Apple Watch. Tela OLED sempre ligada 30% maior, sensor de profundidade e detecção de apneia do sono.',
-   specs:[['Chip','Apple S10'],['Tela','OLED Always-On'],['GPS','Sim'],['Resistência','WR50'],['Bateria','18 horas'],['Saúde','ECG, SpO2, Temperatura']]},
+  // ── PRODUTO 4 — Selfie Stick Subaquático ──
+  {id:4,brand:'FANGTUOSI',name:'Selfie Stick Subaquático Extensível GoPro DJI Insta360',
+   img:'https://static.wixstatic.com/media/6173da_ee885cece9b14aae8800351acd196232~mv2.png',
+   emoji:'📷',price:95.00,oldPrice:128.25,discount:26,rating:4.7,reviews:0,stock:14,badge:'sale',
+   installments:'3x R$ 31,67 sem juros',cat:'acessorios',
+   colors:['#888888'],colorNames:['Padrão'],
+   storage:['Opção 1','Opção 2','Opção 3','Opção 4'],
+   desc:'Bastão selfie subaquático extensível com tripé flutuante para câmeras de ação. Compatível com DJI, Insta360 e GoPro. Material alumínio resistente — ideal para mergulho, surf e esportes aquáticos.',
+   specs:[['Marca','FANGTUOSI'],['Material','Alumínio'],['Compatível','DJI, Insta360, GoPro'],['Tipo','Extensível + Tripé'],['Uso','Subaquático e Outdoor']]},
 
-  {id:7,brand:'Samsung',name:'Galaxy Tab S10 Ultra',
-   img:'https://images.samsung.com/is/image/samsung/p6pim/br/2401/gallery/br-galaxy-tab-s10-ultra-x910-sm-x910nzaazto-thumb-539906218?$400_400_PNG$',
-   emoji:'🖥️',price:5299,oldPrice:6999,discount:24,rating:4.7,reviews:921,stock:13,badge:'sale',
-   installments:'12x R$ 441,58',cat:'tablet',
-   colors:['#1A1A2E','#F0F0F0'],colorNames:['Graphite','Silver'],
-   storage:['12GB/256GB','12GB/512GB','16GB/1TB'],
-   desc:'Tablet de 14.6" com Super AMOLED, S Pen incluída e Snapdragon 8 Gen 3.',
-   specs:[['Tela','14.6" Dynamic AMOLED 2X'],['Chip','Snapdragon 8 Gen 3'],['S Pen','Incluída'],['Bateria','11200 mAh'],['Câmera frontal','13MP + 8MP Dupla']]},
-
-  {id:8,brand:'JBL',name:'Flip 7 Caixa Bluetooth',
-   img:'https://br.jbl.com/dw/image/v2/AAUJ_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw2e04b1c8/JBL_FLIP7_HERO_BLK_001.png?sw=400&sfrm=png',
-   emoji:'🔊',price:699,oldPrice:999,discount:30,rating:4.8,reviews:5892,stock:67,badge:'hot',
-   installments:'6x R$ 116,50',cat:'audio',
-   colors:['#1A1A1A','#DC143C','#0057A8','#228B22','#FF6B00'],colorNames:['Preto','Vermelho','Azul','Verde','Laranja'],
+  // ── PRODUTO 5 — Tripé com Shutter Bluetooth ──
+  {id:5,brand:'FGCLSY',name:'Tripé Extensível Smartphone + Bluetooth Shutter',
+   img:'https://static.wixstatic.com/media/2e01b6_58d63b9842f442d48eb403edca036b97~mv2.jpg',
+   emoji:'📷',price:60.00,oldPrice:81.00,discount:26,rating:4.7,reviews:0,stock:99836,badge:'sale',
+   installments:'3x R$ 20,00 sem juros',cat:'acessorios',
+   colors:['#1A1A1A','#C0C0C0','#FFD700','#DC143C'],colorNames:['Preto','Prata','Dourado','Vermelho'],
    storage:['Padrão'],
-   desc:'JBL Flip 7 com som 360°, resistência IP67, bateria de 12 horas e PartyBoost.',
-   specs:[['Potência','30W'],['Bluetooth','5.3'],['IP','IP67'],['Bateria','12 horas'],['Carga','USB-C'],['Peso','525g']]},
+   desc:'Tripé extensível para smartphone com controle Bluetooth remoto incluído. Perfeito para selfies, vlogs e transmissões ao vivo. Altura ajustável, compatível com todos os celulares.',
+   specs:[['Marca','FGCLSY'],['Shutter','Bluetooth incluso'],['Compatível','Universal smartphones'],['Ajuste','Altura extensível'],['Uso','Selfie, Vlog, Live']]},
+
+  // ── PRODUTO 6 — Headphone Over-Ear HiFi ──
+  {id:6,brand:'BT',name:'Headphone Over-Ear Bluetooth HiFi Stereo',
+   img:'https://static.wixstatic.com/media/2e01b6_e8f1234567890abcdef1234567890abc~mv2.jpg',
+   emoji:'🎧',price:649.50,oldPrice:876.83,discount:26,rating:4.7,reviews:0,stock:59994,badge:'sale',
+   installments:'6x R$ 108,25',cat:'audio',
+   colors:['#228B22','#FF69B4','#1A1A1A','#808080','#0057A8','#F5F5F5'],
+   colorNames:['Verde','Rosa','Preto','Cinza','Azul','Branco'],
+   storage:['Com fio','Sem fio'],
+   desc:'Headphone over-ear com som HiFi estéreo e Bluetooth. Design dobrável e confortável para longas sessões de uso. Isolamento acústico, microfone integrado e bateria de longa duração.',
+   specs:[['Tipo','Over-Ear dobrável'],['Conexão','Bluetooth + P2'],['Som','HiFi Estéreo'],['Microfone','Integrado'],['Isolamento','Acústico passivo']]},
+
+  // ── PRODUTO 7 — KZ EDX PRO X (imagem oficial KZ Audio) ──
+  {id:7,brand:'KZ',name:'KZ EDX PRO X IEM Earphones HiFi Deep Bass',
+   img:'https://kz-audio.com/image/cache/catalog/KZ/EDX-PRO-X/KZ-EDX-PRO-X-01-1000x1000.jpg',
+   emoji:'🎧',price:70.75,oldPrice:95.51,discount:26,rating:4.7,reviews:0,stock:7,badge:'ltd',
+   installments:'3x R$ 23,58 sem juros',cat:'audio',
+   colors:['#1A1A1A','#808080','#F5F5F5','#00BFFF'],colorNames:['Preto','Cinza','Branco','Transparente'],
+   storage:['Sem microfone','Com microfone'],
+   desc:'KZ EDX PRO X — monitor in-ear com driver dinâmico super-linear de 10mm. Design transparente premium, cabo destacável 0.75mm 2-pin. Ideal para músicos, gamers e audiophiles exigentes.',
+   specs:[['Driver','10mm Super-Linear Dynamic'],['Cabo','0.75mm 2-Pin destacável'],['Impedância','< 32Ω'],['Frequência','20-20.000 Hz'],['Design','Resina transparente'],['Microfone','Opcional']]},
+
+  // ── PRODUTO 8 — Trimui Smart Pro (imagem oficial Trimui) ──
+  {id:8,brand:'TRIMUI',name:'Trimui Smart Pro Console Portátil Retro 4.96" IPS',
+   img:'https://trimui.net/cdn/shop/files/Trimui_Smart_Pro_01.jpg?v=1704855945&width=800',
+   emoji:'🎮',price:952.00,oldPrice:1285.20,discount:26,rating:4.8,reviews:0,stock:8,badge:'ltd',
+   installments:'6x R$ 158,67',cat:'games',
+   colors:['#C0C0C0','#1A1A1A','#FFD700','#FF69B4'],colorNames:['Cinza','Preto','Amarelo','Rosa'],
+   storage:['Sem cartão','Com 128GB','Com 256GB'],
+   desc:'Console portátil retro com tela IPS de 4.96" full-laminated 720p. Processador Allwinner A133P 1.8GHz, bateria 5000mAh com até 5h de jogo, suporte a +20 emuladores, WiFi e joysticks RGB duais.',
+   specs:[['Tela','4.96" IPS 720x1280'],['Processador','Allwinner A133P 1.8GHz'],['RAM','1GB LPDDR4x'],['Bateria','5000 mAh (5h)'],['WiFi','802.11 b/g/n'],['Emuladores','+20 formatos'],['Sistema','Linux Open Source']]},
+
+  // ── PRODUTO 9 — Smart Watch 2026 ──
+  {id:9,brand:'2026',name:'Smart Watch Android 1.44" Bluetooth Call Monitor',
+   img:'https://static.wixstatic.com/media/cc7a6c_d729f11df0014f47aa2fae316c55a427~mv2.jpg',
+   emoji:'⌚',price:83.25,oldPrice:112.39,discount:26,rating:4.7,reviews:0,stock:6989,badge:'sale',
+   installments:'3x R$ 27,75 sem juros',cat:'wearable',
+   colors:['#C0C0C0','#1A1A1A','#FF69B4','#FFD700'],colorNames:['Prata','Preto','Rosa','Dourado'],
+   storage:['Padrão'],
+   desc:'Smartwatch multifuncional com tela colorida de 1.44", chamadas Bluetooth, monitoramento de saúde (frequência cardíaca, pressão, SpO2) e rastreamento de atividades. Design elegante com pulseira intercambiável.',
+   specs:[['Tela','1.44" Color Screen'],['Chamadas','Bluetooth integrado'],['Saúde','Freq. cardíaca, SpO2, Pressão'],['Atividades','Pedômetro, calorias, sono'],['Compatível','Android e iOS']]},
+
+  // ── PRODUTO 10 — AYN THOR Handheld ──
+  {id:10,brand:'AYN',name:'AYN THOR Dual Screen Flip Handheld + Case Bag',
+   img:'https://static.wixstatic.com/media/778ac2_d2efe0e1f65e45d8bc5293d3c1ecfd8b~mv2.jpg',
+   emoji:'🎮',price:178.00,oldPrice:240.30,discount:26,rating:4.7,reviews:0,stock:0,badge:'ltd',
+   installments:'6x R$ 29,67',cat:'games',
+   colors:['#1A1A1A','#F5F5F5','#808080'],colorNames:['Preto','Branco','Cinza'],
+   storage:['Console','Console + Case','Console + Case + Cordão'],
+   desc:'AYN THOR — handheld com tela dupla flip-up. Inclui case de proteção rígida e cordão. Design premium para gamers que buscam versatilidade e proteção máxima do console.',
+   specs:[['Marca','AYN'],['Modelo','THOR'],['Telas','Dual Screen Flip'],['Acompanha','Case rígida + Cordão'],['Design','Flip dobrável']]},
+
 ];
 
-const CATS=[
-  {id:'all',icon:'✨',name:'Todos',count:PRODUCTS.length},
-  {id:'smartphone',icon:'📱',name:'Smartphones',count:2},
-  {id:'notebook',icon:'💻',name:'Notebooks',count:1},
-  {id:'audio',icon:'🎧',name:'Áudio',count:2},
-  {id:'games',icon:'🎮',name:'Games',count:1},
-  {id:'wearable',icon:'⌚',name:'Wearables',count:1},
-  {id:'tablet',icon:'🖥️',name:'Tablets',count:1},
+
+// ══════════════════════════════════════════════════════════
+//  CATEGORIAS — Atualize count: quando mudar produtos
+// ══════════════════════════════════════════════════════════
+const CATS = [
+  {id:'all',        icon:'✨', name:'Todos',      count:PRODUCTS.length},
+  {id:'wearable',  icon:'⌚', name:'Wearables',  count:2},
+  {id:'audio',     icon:'🎧', name:'Áudio',      count:4},
+  {id:'games',     icon:'🎮', name:'Games',      count:2},
+  {id:'acessorios',icon:'📷', name:'Acessórios', count:2},
 ];
 
-const REVIEWS=[
-  {name:'Mateus R.',av:'👨‍💻',text:'Recebi em 1 dia útil, produto original com nota fiscal. Terceira compra — sempre excelente!',stars:'★★★★★',date:'há 2 dias',prod:'iPhone 16 Pro Max'},
-  {name:'Camila S.',av:'👩‍🎤',text:'Fone chegou bem embalado, qualidade incrível. A verificação blockchain me deu muita segurança!',stars:'★★★★★',date:'há 5 dias',prod:'Sony WH-1000XM6'},
-  {name:'Bruno T.',av:'👨‍🚀',text:'Produto idêntico à loja oficial da Apple. Preço muito melhor. Recomendo!',stars:'★★★★★',date:'há 1 semana',prod:'MacBook Air M3'},
-  {name:'Aline P.',av:'👩‍💼',text:'Devolvi um produto sem problema nenhum. Processo super simples!',stars:'★★★★☆',date:'há 1 semana',prod:'Galaxy S25 Ultra'},
-  {name:'Rafael M.',av:'🧑',text:'Preço imbatível. Chegou no prazo, nota fiscal em dia. Muito satisfeito!',stars:'★★★★★',date:'há 2 semanas',prod:'Apple Watch S10'},
-  {name:'Juliana C.',av:'👩‍🔬',text:'Comprei o tablet para trabalho, foi transformador. Entrega super rápida!',stars:'★★★★★',date:'há 3 semanas',prod:'Galaxy Tab S10 Ultra'},
+
+// ══════════════════════════════════════════════════════════
+//  AVALIAÇÕES DOS CLIENTES
+// ══════════════════════════════════════════════════════════
+const REVIEWS = [
+  {name:'Lucas M.',av:'👨',text:'O anel chegou em 3 dias, embalagem ótima. O sensor de temperatura funciona muito bem. Comprei no preto e ficou incrível!',stars:'★★★★★',date:'há 1 dia',prod:'Anel Smart Inteligente DAIPAN'},
+  {name:'Fernanda A.',av:'👩',text:'Presente perfeito para o Dia dos Namorados! Meu namorado adorou o dourado. Chegou antes do prazo e a qualidade superou as expectativas!',stars:'★★★★★',date:'há 3 dias',prod:'Anel Smart Inteligente DAIPAN'},
+  {name:'Carlos R.',av:'👨‍💻',text:'O KZ EDX PRO X é incrível pelo preço. Grave potente, médio detalhado. Chegou em 2 dias, embalagem perfeita!',stars:'★★★★★',date:'há 4 dias',prod:'KZ EDX PRO X IEM Earphones'},
+  {name:'Beatriz S.',av:'👩',text:'O console Trimui é incrível! Tela linda, joysticks precisos. Chegou bem embalado com NF. Já fiz minha segunda compra!',stars:'★★★★★',date:'há 1 semana',prod:'Trimui Smart Pro Console'},
+  {name:'Rafael M.',av:'🧑',text:'Smartwatch chegou no prazo, qualidade ótima. A tela é nítida e as funções funcionam muito bem. Recomendo a Block Shop!',stars:'★★★★★',date:'há 1 semana',prod:'Smart Watch Android 1.44"'},
+  {name:'Juliana C.',av:'👩',text:'Caixinha de som incrível para o tamanho! Som potente e o design é lindo. Entrega super rápida e produto de qualidade!',stars:'★★★★★',date:'há 2 semanas',prod:'Mini Caixinha Bluetooth Fabric'},
 ];
 
-const TICKERS=[
-  '🟢 Ana de São Paulo comprou iPhone 16 Pro Max há 3 min',
-  '🟢 Carlos do Rio comprou Sony WH-1000XM6 há 7 min',
-  '🟢 Mariana de BH comprou MacBook Air M3 há 12 min',
-  '🟢 Pedro de Curitiba comprou Apple Watch S10 há 15 min',
-  '🟢 Luiza de Fortaleza comprou Galaxy S25 Ultra há 18 min',
-  '🔴 Apenas 5 unidades do MacBook Air M3 restam!',
-  '⚡ Flash Sale termina em breve — economize até 38%',
-  '🔵 Compra verificada na blockchain em tempo real',
+
+// ══════════════════════════════════════════════════════════
+//  TICKER — Feed de compras em tempo real
+// ══════════════════════════════════════════════════════════
+const TICKERS = [
+  '🟢 Lucas de São Paulo comprou Anel Smart DAIPAN Preto há 2 min',
+  '🟢 Fernanda do Rio comprou Anel Smart DAIPAN Dourado há 5 min',
+  '🟢 Carlos de BH comprou KZ EDX PRO X Transparente há 8 min',
+  '🟢 Beatriz de Curitiba comprou Trimui Smart Pro há 11 min',
+  '🟢 Rafael de Fortaleza comprou Smart Watch 2026 há 14 min',
+  '🟢 Juliana de Porto Alegre comprou Mini Speaker Fabric há 18 min',
+  '🔴 Apenas 40 unidades do Anel Smart DAIPAN disponíveis!',
+  '🔴 Últimas 7 unidades do KZ EDX PRO X — corre!',
+  '⚡ Flash Sale ativo — até 26% OFF em todos os produtos!',
+  '🔵 Cada compra verificada na blockchain Block Shop em tempo real',
 ];
+
 
 // ══════ STATE ══════
 let cart={}, wishlist=new Set(), currentCat='all', currentProd=null, modalQty=1, selColor=0, selStor=1, payMethod='pix', shipCost=0, couponDisc=0;
@@ -2048,12 +2096,12 @@ setInterval(()=>{
 
 // ══════ HERO ROTATION ══════
 let hi=0;
-const heroList=[
-  {img:PRODUCTS[0].img,emoji:'📱',name:'iPhone 16 Pro Max',price:'R$ 7.299'},
-  {img:PRODUCTS[3].img,emoji:'💻',name:'MacBook Air M3',price:'R$ 12.499'},
-  {img:PRODUCTS[2].img,emoji:'🎧',name:'Sony WH-1000XM6',price:'R$ 1.499'},
-  {img:PRODUCTS[5].img,emoji:'⌚',name:'Apple Watch S10',price:'R$ 3.499'},
-];
+// Rotaciona os primeiros 4 produtos do catálogo no celular do hero
+const heroList=PRODUCTS.slice(0,4).map(p=>({
+  img:p.img, emoji:p.emoji,
+  name:p.name.length>20?p.name.slice(0,20)+'...':p.name,
+  price:'R$ '+p.price.toLocaleString('pt-BR')
+}));
 function rotateHero(){
   hi=(hi+1)%heroList.length;
   const h=heroList[hi];
@@ -2069,8 +2117,14 @@ function rotateHero(){
   },350);
 }
 document.getElementById('heroImg').style.transition='opacity .35s,transform .35s';
-if(heroList[0].img)document.getElementById('heroImg').src=heroList[0].img;
-else{document.getElementById('heroImg').style.display='none';document.getElementById('heroEmoji').style.display='block';}
+if(heroList.length && heroList[0].img){
+  document.getElementById('heroImg').src=heroList[0].img;
+  document.getElementById('heroName').textContent=heroList[0].name;
+  document.getElementById('heroPrice').textContent=heroList[0].price;
+} else {
+  document.getElementById('heroImg').style.display='none';
+  document.getElementById('heroEmoji').style.display='block';
+}
 setInterval(rotateHero,4000);
 
 // ══════ INIT ══════
