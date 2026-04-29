@@ -6,6 +6,67 @@
 <meta name="description" content="Block Shop — Tecnologia verificada na blockchain. Smartphones, notebooks, fones e mais com os melhores preços.">
 <meta name="theme-color" content="#0A0A0C">
 <title>BLOCK SHOP — Tecnologia Verificada na Blockchain</title>
+<!-- ══════ FAVICON ══════ -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='2' y='2' width='12' height='12' rx='2.5' fill='%23FF3F3F'/><rect x='18' y='2' width='12' height='12' rx='2.5' fill='%23FF3F3F' opacity='.5'/><rect x='2' y='18' width='12' height='12' rx='2.5' fill='%23FF3F3F' opacity='.5'/><rect x='18' y='18' width='12' height='12' rx='2.5' fill='%23FF3F3F'/><circle cx='16' cy='16' r='3' fill='%2300E5FF'/></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A0A0C'/><rect x='2' y='2' width='12' height='12' rx='2.5' fill='%23FF3F3F'/><rect x='18' y='2' width='12' height='12' rx='2.5' fill='%23FF3F3F' opacity='.5'/><rect x='2' y='18' width='12' height='12' rx='2.5' fill='%23FF3F3F' opacity='.5'/><rect x='18' y='18' width='12' height='12' rx='2.5' fill='%23FF3F3F'/><circle cx='16' cy='16' r='3' fill='%2300E5FF'/></svg>">
+
+<!-- ══════ CANONICAL URL ══════ -->
+<link rel="canonical" href="https://www.blockshoponline.com">
+
+<!-- ══════ OPEN GRAPH — WhatsApp, Facebook, LinkedIn ══════ -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.blockshoponline.com">
+<meta property="og:title" content="BLOCK SHOP — Tecnologia Verificada na Blockchain">
+<meta property="og:description" content="A única loja de tecnologia com segurança blockchain. Gadgets, wearables e eletrônicos premium com os melhores preços e entrega expressa para todo o Brasil.">
+<meta property="og:image" content="https://static.wixstatic.com/media/cc7a6c_a2c5680f0f7c49078e13d2d779c84be2~mv2.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Block Shop">
+
+<!-- ══════ TWITTER CARD ══════ -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="BLOCK SHOP — Tecnologia Verificada na Blockchain">
+<meta name="twitter:description" content="A única loja de tecnologia com segurança blockchain. Gadgets premium com os melhores preços.">
+<meta name="twitter:image" content="https://static.wixstatic.com/media/cc7a6c_a2c5680f0f7c49078e13d2d779c84be2~mv2.jpg">
+
+<!-- ══════ STRUCTURED DATA — Google Shopping / Rich Results ══════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "Block Shop",
+  "url": "https://www.blockshoponline.com",
+  "logo": "https://www.blockshoponline.com",
+  "description": "A única loja de tecnologia com segurança blockchain. Gadgets, wearables e eletrônicos premium.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "BR",
+    "addressLocality": "São Paulo"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "availableLanguage": "Portuguese"
+  },
+  "sameAs": ["https://www.blockshoponline.com"]
+}
+</script>
+
+<!-- ══════ GOOGLE ANALYTICS ══════ -->
+<!-- ► Substitua G-XXXXXXXXXX pelo seu ID real do Google Analytics -->
+<!-- ► Para criar: analytics.google.com → Admin → Criar propriedade -->
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+-->
+
+<!-- ══════ FONTES ══════ -->
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -1068,6 +1129,129 @@ html{scroll-padding-top:var(--top-total)}
 @keyframes badge-pop{0%{transform:scale(1)}50%{transform:scale(1.5)}100%{transform:scale(1)}}
 .n-badge.pop{animation:badge-pop .3s ease}
 
+
+/* ══════════════════════════════
+   PERFIL + PEDIDOS NAV
+══════════════════════════════ */
+.profile-wrap{position:relative;flex-shrink:0}
+.profile-btn{
+  width:36px;height:36px;background:var(--surface);border:1px solid var(--border);
+  border-radius:8px;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:all .2s;position:relative;flex-shrink:0
+}
+.profile-btn:hover{border-color:var(--border2);background:var(--surface2)}
+.profile-btn svg{pointer-events:none}
+.profile-dropdown{
+  position:absolute;top:calc(100% + 10px);right:0;
+  background:var(--bg2);border:1px solid var(--border2);
+  border-radius:var(--r);padding:8px;
+  min-width:200px;z-index:601;
+  box-shadow:0 16px 48px rgba(0,0,0,.5);
+  opacity:0;pointer-events:none;
+  transform:translateY(-8px);
+  transition:all .2s cubic-bezier(.34,1.56,.64,1)
+}
+.profile-dropdown.open{opacity:1;pointer-events:all;transform:translateY(0)}
+.pd-header{
+  padding:10px 12px 12px;border-bottom:1px solid var(--border);
+  margin-bottom:6px;
+}
+.pd-title{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--text);margin-bottom:2px}
+.pd-sub{font-size:11px;color:var(--text3)}
+.pd-item{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 12px;border-radius:8px;
+  font-size:13px;font-weight:500;color:var(--text2);
+  cursor:pointer;transition:all .2s;text-decoration:none;
+  width:100%;text-align:left;background:none;border:none;
+  font-family:var(--fb);
+}
+.pd-item:hover{background:var(--surface);color:var(--text)}
+.pd-item .pd-icon{font-size:16px;flex-shrink:0}
+.pd-item.highlight{
+  background:rgba(255,63,63,.08);color:var(--accent);
+  border:1px solid rgba(255,63,63,.2);margin-top:6px;
+}
+.pd-item.highlight:hover{background:rgba(255,63,63,.15)}
+.pd-divider{border:none;border-top:1px solid var(--border);margin:6px 0}
+
+/* Mobile profile button */
+@media(max-width:768px){
+  .profile-btn{width:34px;height:34px}
+  .profile-dropdown{right:-8px;min-width:220px}
+}
+
+/* ══════════════════════════════
+   WHATSAPP BUTTON FLUTUANTE
+══════════════════════════════ */
+.wa-btn{
+  position:fixed;bottom:24px;left:20px;z-index:999;
+  width:52px;height:52px;background:#25D366;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,.4);
+  transition:transform .2s,box-shadow .2s;
+  text-decoration:none;
+}
+.wa-btn:hover{transform:scale(1.1);box-shadow:0 8px 28px rgba(37,211,102,.5)}
+.wa-btn svg{width:28px;height:28px;fill:#fff}
+.wa-pulse{
+  position:absolute;width:100%;height:100%;border-radius:50%;
+  background:rgba(37,211,102,.3);
+  animation:wa-ring 2s ease-out infinite;
+}
+@keyframes wa-ring{
+  0%{transform:scale(1);opacity:.6}
+  100%{transform:scale(1.6);opacity:0}
+}
+.wa-tooltip{
+  position:absolute;left:60px;background:#1a1a1a;color:#fff;
+  font-size:12px;font-weight:600;white-space:nowrap;
+  padding:6px 12px;border-radius:8px;pointer-events:none;
+  opacity:0;transition:opacity .2s;
+}
+.wa-tooltip::before{
+  content:'';position:absolute;left:-5px;top:50%;transform:translateY(-50%);
+  border:5px solid transparent;border-right-color:#1a1a1a;border-left:none;
+}
+.wa-btn:hover .wa-tooltip{opacity:1}
+@media(max-width:768px){
+  .wa-btn{bottom:80px;left:14px;width:46px;height:46px}
+}
+
+/* ══════════════════════════════
+   LGPD COOKIE BANNER
+══════════════════════════════ */
+.cookie-banner{
+  position:fixed;bottom:0;left:0;right:0;z-index:1001;
+  background:var(--bg2);border-top:1px solid var(--border2);
+  padding:16px 24px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;flex-wrap:wrap;
+  transform:translateY(100%);transition:transform .4s ease;
+  box-shadow:0 -8px 32px rgba(0,0,0,.4);
+}
+.cookie-banner.show{transform:translateY(0)}
+.cookie-text{font-size:13px;color:var(--text2);line-height:1.5;flex:1;min-width:200px}
+.cookie-text a{color:var(--cyan);text-decoration:underline}
+.cookie-btns{display:flex;gap:8px;flex-shrink:0;flex-wrap:wrap}
+.cookie-accept{
+  background:var(--accent);color:#fff;border-radius:8px;
+  padding:9px 20px;font-size:13px;font-weight:600;cursor:pointer;
+  transition:opacity .2s;border:none;font-family:var(--fb);
+}
+.cookie-accept:hover{opacity:.85}
+.cookie-decline{
+  background:var(--surface);color:var(--text2);border:1px solid var(--border2);
+  border-radius:8px;padding:9px 16px;font-size:13px;font-weight:500;
+  cursor:pointer;transition:all .2s;font-family:var(--fb);
+}
+.cookie-decline:hover{border-color:var(--border);color:var(--text)}
+@media(max-width:768px){
+  .cookie-banner{padding:14px 16px;bottom:0}
+  .cookie-text{font-size:12px}
+  .cookie-btns{width:100%}
+  .cookie-accept,.cookie-decline{flex:1;text-align:center}
+}
 </style>
 </head>
 <body>
@@ -1100,10 +1284,50 @@ html{scroll-padding-top:var(--top-total)}
     <input type="text" placeholder="Buscar produto..." id="searchInput" oninput="handleSearch(this.value)">
   </div>
   <div class="nav-right">
+    <!-- Ícone Favoritos -->
     <div class="icon-btn" onclick="showPage('wishlist')" title="Favoritos">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="#A0A0B0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <span class="n-badge" id="wishBadge" style="display:none">0</span>
     </div>
+
+    <!-- Ícone Perfil com dropdown -->
+    <div class="profile-wrap" id="profileWrap">
+      <button class="profile-btn" onclick="toggleProfile()" title="Minha conta" id="profileBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="8" r="4" stroke="#A0A0B0" stroke-width="1.5"/>
+          <path d="M4 20c0-3.314 3.582-6 8-6s8 2.686 8 6" stroke="#A0A0B0" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <!-- Dropdown do perfil -->
+      <div class="profile-dropdown" id="profileDropdown">
+        <div class="pd-header">
+          <div class="pd-title">Minha Conta</div>
+          <div class="pd-sub">Acesse sua conta no Wix</div>
+        </div>
+        <a class="pd-item" href="https://www.blockshoponline.com/account-settings" target="_blank">
+          <span class="pd-icon">👤</span>Meu Perfil
+        </a>
+        <a class="pd-item" href="https://www.blockshoponline.com/account-settings/my-addresses" target="_blank">
+          <span class="pd-icon">📍</span>Meus Endereços
+        </a>
+        <a class="pd-item" href="https://www.blockshoponline.com/account-settings/my-wallet" target="_blank">
+          <span class="pd-icon">💳</span>Formas de Pagamento
+        </a>
+        <hr class="pd-divider">
+        <a class="pd-item" href="https://www.blockshoponline.com/my-orders" target="_blank">
+          <span class="pd-icon">📦</span>Meus Pedidos
+        </a>
+        <a class="pd-item" href="https://www.blockshoponline.com/my-orders" target="_blank">
+          <span class="pd-icon">🔔</span>Acompanhar Pedido
+        </a>
+        <hr class="pd-divider">
+        <a class="pd-item highlight" href="https://www.blockshoponline.com/account-settings" target="_blank">
+          <span class="pd-icon">🔐</span>Entrar / Cadastrar
+        </a>
+      </div>
+    </div>
+
+    <!-- Botão Carrinho -->
     <button class="cart-nav-btn" onclick="openCart()">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><line x1="3" y1="6" x2="21" y2="6" stroke="#fff" stroke-width="1.7"/><path d="M16 10a4 4 0 0 1-8 0" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/></svg>
       Carrinho
@@ -1126,6 +1350,10 @@ html{scroll-padding-top:var(--top-total)}
   <a href="#" onclick="scrollToOffers();closeMobileNav();return false">⚡ Ofertas Flash</a>
   <a href="#" onclick="showPage('wishlist');closeMobileNav();return false">❤️ Meus Favoritos</a>
   <button onclick="openCart();closeMobileNav()">🛒 Carrinho</button>
+  <hr style="border:none;border-top:1px solid var(--border);margin:4px 0">
+  <a href="https://www.blockshoponline.com/my-orders" target="_blank" onclick="closeMobileNav()">📦 Meus Pedidos</a>
+  <a href="https://www.blockshoponline.com/account-settings" target="_blank" onclick="closeMobileNav()">👤 Minha Conta</a>
+  <a href="https://www.blockshoponline.com/account-settings" target="_blank" onclick="closeMobileNav()">🔐 Entrar / Cadastrar</a>
 </div>
 
 <!-- ══════ FLASH BAR (fora das pages, sempre visível) ══════ -->
@@ -1282,11 +1510,11 @@ html{scroll-padding-top:var(--top-total)}
       <div class="foot-col">
         <h4>Atendimento</h4>
         <ul>
-          <li><a href="#">Central de Ajuda</a></li>
-          <li><a href="#">Meus Pedidos</a></li>
-          <li><a href="#">Trocas e Devoluções</a></li>
-          <li><a href="#">Garantia</a></li>
-          <li><a href="#">Fale Conosco</a></li>
+          <li><a href="https://www.blockshoponline.com/contact" target="_blank">Central de Ajuda</a></li>
+          <li><a href="https://www.blockshoponline.com/my-orders" target="_blank">Meus Pedidos</a></li>
+          <li><a href="https://www.blockshoponline.com/contact" target="_blank">Trocas e Devoluções</a></li>
+          <li><a href="https://www.blockshoponline.com/contact" target="_blank">Garantia</a></li>
+          <li><a href="https://wa.me/5511999999999?text=Olá!%20Preciso%20de%20ajuda." target="_blank">💬 Fale no WhatsApp</a></li>
         </ul>
       </div>
       <div class="foot-col">
@@ -1296,7 +1524,8 @@ html{scroll-padding-top:var(--top-total)}
           <li><a href="#">Blog Tech</a></li>
           <li><a href="#">Afiliados</a></li>
           <li><a href="#">Trabalhe Conosco</a></li>
-          <li><a href="#">Privacidade</a></li>
+          <li><a href="https://www.blockshoponline.com/privacy-policy" target="_blank">Política de Privacidade</a></li>
+          <li><a href="https://www.blockshoponline.com/terms-of-use" target="_blank">Termos de Uso</a></li>
         </ul>
       </div>
     </div>
@@ -2151,8 +2380,73 @@ if(heroList.length && heroList[0].img){
 }
 setInterval(rotateHero,4000);
 
+// ══════ PERFIL DROPDOWN ══════
+function toggleProfile(){
+  const dd=document.getElementById('profileDropdown');
+  dd.classList.toggle('open');
+}
+// Fecha dropdown ao clicar fora
+document.addEventListener('click',function(e){
+  const wrap=document.getElementById('profileWrap');
+  if(wrap && !wrap.contains(e.target)){
+    document.getElementById('profileDropdown').classList.remove('open');
+  }
+});
+
+// ══════ LGPD COOKIES ══════
+function acceptCookies(){
+  localStorage.setItem('bs_cookies','accepted');
+  document.getElementById('cookieBanner').classList.remove('show');
+  // ► Aqui você pode ativar Google Analytics, Pixel etc após aceite
+}
+function declineCookies(){
+  localStorage.setItem('bs_cookies','declined');
+  document.getElementById('cookieBanner').classList.remove('show');
+}
+function initCookieBanner(){
+  const consent=localStorage.getItem('bs_cookies');
+  if(!consent){
+    setTimeout(()=>document.getElementById('cookieBanner').classList.add('show'),1500);
+  }
+}
+
 // ══════ INIT ══════
 renderCats();renderTabs();renderProducts(PRODUCTS);renderRevs();renderTicker();
+initCookieBanner();
 </script>
+
+<!-- ══════ WHATSAPP SUPORTE ══════ -->
+<!-- ► IMPORTANTE: Substitua 5511999999999 pelo seu número real -->
+<!-- ► Formato: 55 (Brasil) + DDD + número, sem espaços ou hífens -->
+<!-- ► Exemplo São Paulo: 5511912345678 -->
+<a class="wa-btn"
+   href="https://wa.me/5511999999999?text=Olá!%20Vim%20pelo%20site%20Block%20Shop%20e%20gostaria%20de%20tirar%20uma%20dúvida."
+   target="_blank"
+   rel="noopener noreferrer"
+   title="Fale conosco no WhatsApp">
+  <div class="wa-pulse"></div>
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.112.549 4.094 1.508 5.814L0 24l6.335-1.493A11.951 11.951 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.373l-.36-.214-3.732.879.893-3.641-.234-.374A9.786 9.786 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/>
+  </svg>
+  <div class="wa-tooltip">💬 Fale conosco</div>
+</a>
+
+
+<!-- ══════ LGPD COOKIE BANNER ══════ -->
+<div class="cookie-banner" id="cookieBanner">
+  <div class="cookie-text">
+    🍪 Usamos cookies para melhorar sua experiência, personalizar conteúdo e analisar o tráfego.
+    Ao continuar navegando, você concorda com nossa
+    <a href="https://www.blockshoponline.com/privacy-policy" target="_blank">Política de Privacidade</a>
+    e <a href="https://www.blockshoponline.com/terms-of-use" target="_blank">Termos de Uso</a>,
+    em conformidade com a <strong>LGPD (Lei 13.709/2018)</strong>.
+  </div>
+  <div class="cookie-btns">
+    <button class="cookie-decline" onclick="declineCookies()">Só essenciais</button>
+    <button class="cookie-accept" onclick="acceptCookies()">✓ Aceitar todos</button>
+  </div>
+</div>
+
 </body>
 </html>
