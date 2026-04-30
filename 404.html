@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Redirecionando...</title>
+<script>
+// Redirect product-page and other Wix routes to Wix server
+// GitHub Pages only serves index.html - all other routes go to Wix
+var path = window.location.pathname;
+var wixRoutes = [
+  '/product-page/',
+  '/cart',
+  '/checkout',
+  '/my-orders',
+  '/account-settings',
+  '/contact',
+  '/privacy-policy',
+  '/terms-of-use',
+  '/category/',
+  '/shop'
+];
+
+var isWixRoute = wixRoutes.some(function(route) {
+  return path.startsWith(route) || path === route.replace(/\/$/,'');
+});
+
+if (isWixRoute) {
+  // Redirect to Wix native domain keeping the same path
+  window.location.replace('https://nicolasguimasoubuy.wixsite.com/block-shop' + path + window.location.search);
+} else {
+  // For unknown routes, go to homepage
+  window.location.replace('/');
+}
+</script>
+</head>
+<body>
+<p>Redirecionando...</p>
+</body>
+</html>
